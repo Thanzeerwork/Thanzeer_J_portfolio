@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginAdmin, loginDemoAdmin } from "@/lib/firebase/auth";
+import { loginAdmin, DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD } from "@/lib/firebase/auth";
 import { isFirebaseConfigured } from "@/lib/firebase/config";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("thanzeerwork@gmail.com");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState(DEFAULT_ADMIN_EMAIL);
+  const [password, setPassword] = useState(DEFAULT_ADMIN_PASSWORD);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const isLive = isFirebaseConfigured();
@@ -23,18 +23,6 @@ export default function AdminLoginPage() {
       window.location.href = "/admin";
     } catch (err: any) {
       setError(err.message || "Failed to log in.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleQuickDemo = () => {
-    setLoading(true);
-    try {
-      loginDemoAdmin();
-      window.location.href = "/admin";
-    } catch (err: any) {
-      setError(err?.message || "Failed to enter demo mode");
     } finally {
       setLoading(false);
     }
@@ -170,17 +158,6 @@ export default function AdminLoginPage() {
             {loading ? "Authenticating..." : "Sign in to Dashboard →"}
           </button>
         </form>
-
-        <div style={{ marginTop: "1.25rem", paddingTop: "1.25rem", borderTop: "1px solid var(--admin-border-subtle)" }}>
-          <button
-            type="button"
-            onClick={handleQuickDemo}
-            className="admin-btn admin-btn-secondary"
-            style={{ width: "100%", fontSize: "0.825rem" }}
-          >
-            ⚡ Quick Demo Access (Thanzeer J)
-          </button>
-        </div>
 
         <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
           <p className="admin-label" style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.3)" }}>

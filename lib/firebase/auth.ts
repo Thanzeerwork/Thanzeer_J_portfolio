@@ -15,49 +15,70 @@ export interface AdminUser {
 
 const LOCAL_STORAGE_AUTH_KEY = "tj_portfolio_admin_auth";
 
-export function loginDemoAdmin(): AdminUser {
-  const demoUser: AdminUser = {
-    uid: "admin-thanzeer-session",
-    email: "thanzeerwork@gmail.com",
-    displayName: "Thanzeer J",
-    isDemo: true,
-  };
-  if (typeof window !== "undefined") {
-    localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(demoUser));
-    window.dispatchEvent(new Event("admin_auth_changed"));
-  }
-  return demoUser;
-}
+export const DEFAULT_ADMIN_EMAIL =
+  process.env.NEXT_PUBLIC_ADMIN_EMAIL || "thanzeerwork@gmail.com";
+export const DEFAULT_ADMIN_PASSWORD =
+  process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "Thanzeerportfolio@479660";
 
 export async function loginAdmin(email: string, pass: string): Promise<AdminUser> {
+  const inputEmail = (email || "").trim().toLowerCase();
+  const validEmail = DEFAULT_ADMIN_EMAIL.trim().toLowerCase();
+  const inputPass = pass || "";
+  const isDefaultCredentials =
+    inputEmail === validEmail && inputPass === DEFAULT_ADMIN_PASSWORD;
+
+  // 1. If Firebase Auth is configured, attempt authentication with Firebase
   if (isFirebaseConfigured() && auth) {
     try {
-      const cred = await signInWithEmailAndPassword(auth, email, pass);
-      return {
+      const cred = await signInWithEmailAndPassword(auth, email.trim(), pass);
+      const user: AdminUser = {
         uid: cred.user.uid,
         email: cred.user.email,
-        displayName: cred.user.displayName,
+        displayName: cred.user.displayName || "Thanzeer J",
         isDemo: false,
       };
+      if (typeof window !== "undefined") {
+        localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(user));
+        window.dispatchEvent(new Event("admin_auth_changed"));
+      }
+      return user;
     } catch (err: any) {
       console.warn("Firebase Auth error:", err?.code, err?.message);
-      // If user account is not yet created in Firebase Console or provider disabled,
-      // allow Thanzeer to log in immediately with admin123
-      if (
-        (email.toLowerCase().includes("thanzeer") || pass === "admin123") &&
-        (err?.code === "auth/invalid-credential" ||
-          err?.code === "auth/user-not-found" ||
-          err?.code === "auth/configuration-not-found" ||
-          err?.code === "auth/operation-not-allowed")
-      ) {
-        return loginDemoAdmin();
+      // If user is not yet registered in Firebase Console Auth provider,
+      // fallback to master portfolio admin credentials
+      if (isDefaultCredentials) {
+        const user: AdminUser = {
+          uid: "admin-thanzeer",
+          email: DEFAULT_ADMIN_EMAIL,
+          displayName: "Thanzeer J",
+          isDemo: false,
+        };
+        if (typeof window !== "undefined") {
+          localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(user));
+          window.dispatchEvent(new Event("admin_auth_changed"));
+        }
+        return user;
       }
-      throw err;
+      throw new Error("Invalid email or password.");
     }
   }
 
-  // Demo Fallback when Firebase credentials are not in .env.local yet
-  return loginDemoAdmin();
+  // 2. Fallback when Firebase Auth is offline or disabled: strictly verify master credentials
+  if (isDefaultCredentials) {
+    const user: AdminUser = {
+      uid: "admin-thanzeer",
+      email: DEFAULT_ADMIN_EMAIL,
+      displayName: "Thanzeer J",
+      isDemo: false,
+    };
+    if (typeof window !== "undefined") {
+      localStorage.setItem(LOCAL_STORAGE_AUTH_KEY, JSON.stringify(user));
+      window.dispatchEvent(new Event("admin_auth_changed"));
+    }
+    return user;
+  }
+
+  throw new Error("Invalid email or password.");
 }
 
 export async function logoutAdmin(): Promise<void> {
