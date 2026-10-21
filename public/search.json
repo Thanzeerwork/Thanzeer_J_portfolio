@@ -1,0 +1,12 @@
+[
+  { "title": "RyphTech: Technology Brand & Web Platform", "url": "/work/ryphtech", "pillar": "Project" },
+  { "title": "MealHub: Digital Canteen Prebooking Platform", "url": "/work/mealhub", "pillar": "Project" },
+  { "title": "Repairro: Doorstep Repair & Service Logistics", "url": "/work/repairro", "pillar": "Project" },
+  { "title": "Student Management Portal", "url": "/work/student-portal", "pillar": "Project" },
+  { "title": "Web Development", "url": "/services#web-development", "pillar": "Service" },
+  { "title": "Mobile Application Development", "url": "/services#mobile-development", "pillar": "Service" },
+  { "title": "Backend & Database Integration", "url": "/services#backend-database", "pillar": "Service" },
+  { "title": "Product Development & Prototyping", "url": "/services#product-development", "pillar": "Service" },
+  { "title": "About Thanzeer J", "url": "/about", "pillar": "About" },
+  { "title": "Contact & Opportunities", "url": "/contact", "pillar": "Contact" }
+]

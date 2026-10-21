@@ -1,0 +1,66 @@
+import type { Metadata } from "next";
+import type React from "react";
+import Link from "next/link";
+import { AgencyStats } from "@/components/AgencyStats";
+import { AgencyTestimonials } from "@/components/AgencyTestimonials";
+import { ExpandedWorkShowcase } from "@/components/ExpandedWorkShowcase";
+import { SelectedWork } from "@/components/SelectedWork";
+import { BLOG_POSTS } from "@/data/blog";
+
+export const metadata: Metadata = {
+  title: "Thanzeer J | Full-Stack Developer & Software Developer",
+  description: "Building practical digital solutions through clean code, thoughtful design, and modern technology. Computer Science and Engineering graduate based in Kerala, India.",
+};
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero wrap" data-hero data-astro-cid-lcdefpme><div className="hero__top note" data-astro-cid-lcdefpme><span data-astro-cid-lcdefpme>Thanzeer J · Full-Stack Developer</span><span className="hide-sm" data-astro-cid-lcdefpme>Base · Kerala, India · 10.85° N, 76.27° E</span><span data-astro-cid-lcdefpme>Available for projects</span></div><h1 className="hero__title" data-astro-cid-lcdefpme><span className="hero__human display" data-hero-human data-bp="h1.human" data-astro-cid-lcdefpme>Hi, I'm Thanzeer J.</span><span className="hero__machine h2" data-hero-generate data-bp="h1.machine" data-astro-cid-lcdefpme>Full-Stack Developer | Web &amp; Mobile Application Developer</span></h1><div className="hero__notes" data-astro-cid-lcdefpme><p className="note" data-hero-fade data-astro-cid-lcdefpme><span className="note--accent" data-astro-cid-lcdefpme>●</span> human · clean code &amp; thoughtful design</p><p className="note" data-hero-fade data-astro-cid-lcdefpme><span className="note--accent" data-astro-cid-lcdefpme>◆</span> stack · JavaScript · React · Node.js · React Native</p><p className="note hero__terrain" aria-hidden="true" data-astro-cid-lcdefpme><span className="note--accent" data-astro-cid-lcdefpme>▲</span> terrain · point anywhere to raise the hard part</p></div><div className="hero__foot" data-astro-cid-lcdefpme><p className="hero__intro lead" data-hero-fade data-bp="p.lead" data-astro-cid-lcdefpme>Building practical digital solutions through clean code, thoughtful design, and modern technology. Computer Science and Engineering graduate passionate about web, mobile, and digital products that solve real-world problems.</p><div className="hero__ctas" data-hero-fade data-bp="nav.cta" data-astro-cid-lcdefpme><a href="#work" className="btn" data-astro-cid-lcdefpme>Explore My Work <span className="arrow" data-astro-cid-lcdefpme>↓</span></a><a href="/contact" className="btn btn--ghost" data-astro-cid-lcdefpme>Let's Connect</a></div></div></section>
+
+      <section className="section wrap manifesto" data-wireframe data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[01] Approach</span><span className="note" data-wf-note data-astro-cid-lcdefpme>fig. 01 · wireframe → production</span></header><div className="wf-row" data-astro-cid-lcdefpme><p className="wf-line h1" data-astro-cid-lcdefpme><span className="outline-text" aria-hidden="true" data-astro-cid-lcdefpme>Turning ideas</span><span className="wf-solid" data-wf-solid data-astro-cid-lcdefpme><span className="wf-solid__inner" data-astro-cid-lcdefpme>Turning ideas</span></span></p><span className="wf-dim note" data-wf-note aria-hidden="true" data-astro-cid-lcdefpme>↤ 12 col ↦</span></div><div className="wf-row" data-astro-cid-lcdefpme><p className="wf-line h1" data-astro-cid-lcdefpme><span className="outline-text" aria-hidden="true" data-astro-cid-lcdefpme>into functional</span><span className="wf-solid" data-wf-solid data-astro-cid-lcdefpme><span className="wf-solid__inner" data-astro-cid-lcdefpme>into functional</span></span></p><span className="wf-dim note" data-wf-note aria-hidden="true" data-astro-cid-lcdefpme>font-size: var(--step-4)</span></div><div className="wf-row" data-astro-cid-lcdefpme><p className="wf-line h1" data-astro-cid-lcdefpme><span className="outline-text" aria-hidden="true" data-astro-cid-lcdefpme>digital products.</span><span className="wf-solid" data-wf-solid data-astro-cid-lcdefpme><span className="wf-solid__inner" data-astro-cid-lcdefpme>digital products.</span></span></p><span className="wf-dim note" data-wf-note aria-hidden="true" data-astro-cid-lcdefpme>ls −0.05em</span></div><div className="manifesto__body grid-12" data-astro-cid-lcdefpme><p className="lead" data-reveal="up" data-astro-cid-lcdefpme>From developing business websites to building applications that simplify everyday tasks, I focus on creating digital experiences that are useful, responsive, and easy to use.</p></div></section>
+
+      <AgencyStats />
+
+      <section className="section wrap" id="work" data-astro-cid-lcdefpme>
+        <header className="section-head" data-astro-cid-lcdefpme>
+          <span className="note note--ink" data-astro-cid-lcdefpme>[02] Selected work</span>
+          <span className="note" data-astro-cid-lcdefpme>Interactive Engineering Viewport · Web &amp; Mobile</span>
+        </header>
+        <p className="work__intro lead" data-reveal="up" data-astro-cid-lcdefpme style={{ marginBottom: "2.5rem" }}>
+          I believe the best way to demonstrate software development skills is through practical projects. Explore live interactive application previews, multi-layer architectural stacks, and production metrics below.
+        </p>
+        <SelectedWork />
+      </section>
+
+      <section className="section wrap" id="featured-projects" data-astro-cid-lcdefpme>
+        <ExpandedWorkShowcase />
+      </section>
+
+      <AgencyTestimonials />
+
+      <section className="section wrap" id="services" data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[03] What I Do</span><a href="/services" className="note link" data-astro-cid-lcdefpme>All services →</a></header><ol className="services" data-astro-cid-lcdefpme><li className="service" data-reveal="up" data-astro-cid-lcdefpme><a href="/services/web-development-for-agencies" className="service__link grid-12" data-fill data-astro-cid-lcdefpme><span className="service__n note" aria-hidden="true" data-astro-cid-lcdefpme>01</span><h2 className="service__title h2" data-astro-cid-lcdefpme>Web Development</h2><p className="service__body" data-astro-cid-lcdefpme>I build modern, responsive websites and web applications that balance functionality, usability, and visual consistency.</p><ul className="service__tags" data-astro-cid-lcdefpme><li className="note" data-astro-cid-lcdefpme>Astro</li><li className="note" data-astro-cid-lcdefpme>GSAP</li><li className="note" data-astro-cid-lcdefpme>WordPress</li><li className="note" data-astro-cid-lcdefpme>Drupal</li></ul><span className="service__arrow" aria-hidden="true" data-astro-cid-lcdefpme>→</span></a></li><li className="service" data-reveal="up" data-astro-cid-lcdefpme><a href="/services/ai-for-agencies" className="service__link grid-12" data-fill data-astro-cid-lcdefpme><span className="service__n note" aria-hidden="true" data-astro-cid-lcdefpme>02</span><h2 className="service__title h2" data-astro-cid-lcdefpme>Mobile Application Development</h2><p className="service__body" data-astro-cid-lcdefpme>Developing cross-platform mobile applications with React Native that make services accessible and simplify everyday activities.</p><ul className="service__tags" data-astro-cid-lcdefpme><li className="note" data-astro-cid-lcdefpme>Training</li><li className="note" data-astro-cid-lcdefpme>Claude Code</li><li className="note" data-astro-cid-lcdefpme>Custom workflows</li></ul><span className="service__arrow" aria-hidden="true" data-astro-cid-lcdefpme>→</span></a></li><li className="service" data-reveal="up" data-astro-cid-lcdefpme><a href="/services/ai-product-integration" className="service__link grid-12" data-fill data-astro-cid-lcdefpme><span className="service__n note" aria-hidden="true" data-astro-cid-lcdefpme>03</span><h2 className="service__title h2" data-astro-cid-lcdefpme>Backend & Database Integration</h2><p className="service__body" data-astro-cid-lcdefpme>Handling application data management, authentication, and communication across MongoDB, Cloud Firestore, and Supabase.</p><ul className="service__tags" data-astro-cid-lcdefpme><li className="note" data-astro-cid-lcdefpme>RAG</li><li className="note" data-astro-cid-lcdefpme>Semantic search</li><li className="note" data-astro-cid-lcdefpme>AI SDK</li></ul><span className="service__arrow" aria-hidden="true" data-astro-cid-lcdefpme>→</span></a></li></ol></section>
+
+      <section className="section wrap" id="process" data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[05] How I Approach Development</span><span className="note" data-astro-cid-lcdefpme>From problem to working application</span></header><h2 className="h2 process__claim" data-reveal="lines" data-astro-cid-lcdefpme>Understanding the problem before choosing the technical solution.</h2><div className="process__line" data-draw data-astro-cid-lcdefpme></div><ol className="process grid-12" data-astro-cid-lcdefpme><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>01</span><h3 className="step__title" data-astro-cid-lcdefpme>Understand</h3><p className="step__body" data-astro-cid-lcdefpme>Identify the core problem, intended users, essential features, and expected functional outcomes.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>02</span><h3 className="step__title" data-astro-cid-lcdefpme>Plan</h3><p className="step__body" data-astro-cid-lcdefpme>Break the application into manageable components, define user journeys, and plan data workflows.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>03</span><h3 className="step__title" data-astro-cid-lcdefpme>Design & Develop</h3><p className="step__body" data-astro-cid-lcdefpme>Implement responsive, component-based user interfaces and connect backend services and databases.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>04</span><h3 className="step__title" data-astro-cid-lcdefpme>Test & Improve</h3><p className="step__body" data-astro-cid-lcdefpme>Check user interactions, input handling, and iteratively refine the software through continued learning.</p></li></ol></section>
+
+    <section className="section wrap" id="blog" data-astro-cid-lcdefpme>
+      <header className="section-head" data-astro-cid-lcdefpme>
+        <span className="note note--ink" data-astro-cid-lcdefpme>[05] From the blog</span>
+        <Link href="/blog" className="note link" data-astro-cid-lcdefpme>All posts →</Link>
+      </header>
+      <ul className="posts" data-astro-cid-lcdefpme>
+        {BLOG_POSTS.slice(0, 3).map((post) => (
+          <li key={post.slug} data-reveal="up" data-astro-cid-lcdefpme>
+            <Link href={`/blog/${post.slug}`} className="post grid-12" data-astro-cid-lcdefpme>
+              <span className="post__date note" data-astro-cid-lcdefpme>{post.formattedDate}</span>
+              <span className="post__title h3" data-astro-cid-lcdefpme>{post.title}</span>
+              <span className="post__pillar note" data-astro-cid-lcdefpme>{post.topic}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+      <section className="section wrap cta" data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[06] Next</span><span className="note" data-astro-cid-lcdefpme>30 minutes</span></header><h2 className="display cta__title" data-reveal="lines" data-astro-cid-lcdefpme>Have an idea worth building?</h2><div className="cta__actions" data-reveal="up" data-astro-cid-lcdefpme><a href="mailto:thanzeerwork@gmail.com" className="btn" target="_blank" rel="noopener" data-astro-cid-lcdefpme>Send Me an Email <span className="arrow" data-astro-cid-lcdefpme>↗</span></a><a href="https://www.linkedin.com/in/thanzeer-j/" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" data-astro-cid-lcdefpme>Connect on LinkedIn</a></div></section>
+    </>
+  );
+}
