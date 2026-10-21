@@ -4,9 +4,10 @@ import fs from "fs";
 import path from "path";
 
 export async function GET(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams;
+  const prefix = searchParams.get("prefix") || "";
+
   try {
-    const searchParams = req.nextUrl.searchParams;
-    const prefix = searchParams.get("prefix") || "";
 
     if (isR2Configured()) {
       const { objects, isConfigured } = await listR2Objects(prefix);
@@ -48,6 +49,9 @@ export async function GET(req: NextRequest) {
       objects,
     });
   } catch (error: any) {
+    if (error?.digest === "NEXT_PRERENDER_INTERRUPTED") {
+      throw error;
+    }
     console.error("R2 List error:", error);
     return NextResponse.json(
       { error: error.message || "Failed to list Cloudflare R2 objects" },
