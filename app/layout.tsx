@@ -4,9 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ThemeScript } from "@/components/ThemeScript";
 import { GridOverlay } from "@/components/GridOverlay";
-import { Preloader } from "@/components/Preloader";
 import { CommandPalette } from "@/components/CommandPalette";
-import { PageTransitionOverlay } from "@/components/PageTransitionOverlay";
 import { MotionController } from "@/components/MotionController";
 
 export const metadata: Metadata = {
@@ -72,8 +70,6 @@ export default function RootLayout({
         <a href="#main" className="skip note">
           Skip to content
         </a>
-        <Preloader />
-        <PageTransitionOverlay />
         <MotionController />
         <Header />
         <GridOverlay />

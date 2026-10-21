@@ -10,7 +10,80 @@ export const metadata: Metadata = {
 export default function Page_blog_topic_ai_in_practice() {
   return (
     <>
-<section className="bhead wrap" data-astro-cid-ekm3e3ak><div className="bhead__top note" data-astro-cid-ekm3e3ak><nav aria-label="Breadcrumb" data-astro-cid-ekm3e3ak><a href="/" className="link" data-astro-cid-ekm3e3ak>Home</a> / <a href="/blog" className="link" data-astro-cid-ekm3e3ak>Blog</a> / <span className="note--ink" data-astro-cid-ekm3e3ak>AI in practice</span></nav><span data-astro-cid-ekm3e3ak>[Blog / 04]</span><span className="hide-sm" data-astro-cid-ekm3e3ak>Dev · AI · Agencies · Reviews</span><span data-astro-cid-ekm3e3ak>Notes from current work</span></div><h1 className="bhead__title" data-astro-cid-ekm3e3ak><span className="bhead__human display" data-astro-cid-ekm3e3ak>AI in practice.</span><span className="bhead__machine h3" data-astro-cid-ekm3e3ak>LLMs, agents and automations, shipped for real.</span></h1><span className="bhead__dim note" aria-hidden="true" data-astro-cid-ekm3e3ak>↤ h1 · var(--step-5) · ls −0.055em ↦</span><div className="bhead__foot grid-12" data-astro-cid-ekm3e3ak><p className="bhead__lead lead" data-astro-cid-ekm3e3ak>How I put language models into sites and products: RAG on existing content, agents, n8n workflows, real costs and pitfalls, and the AI-assisted setup I use every day.</p><dl className="spec" data-astro-cid-ekm3e3ak><div data-astro-cid-ekm3e3ak><dt className="note" data-astro-cid-ekm3e3ak>Entries</dt><dd data-astro-cid-ekm3e3ak>01</dd></div><div data-astro-cid-ekm3e3ak><dt className="note" data-astro-cid-ekm3e3ak>Words</dt><dd data-astro-cid-ekm3e3ak>880</dd></div><div data-astro-cid-ekm3e3ak><dt className="note" data-astro-cid-ekm3e3ak>Since</dt><dd data-astro-cid-ekm3e3ak>2025</dd></div><div data-astro-cid-ekm3e3ak><dt className="note" data-astro-cid-ekm3e3ak>Last entry</dt><dd data-astro-cid-ekm3e3ak>09 Jun 2025</dd></div></dl></div><nav className="topics" aria-label="Topics" data-astro-cid-ekm3e3ak><ul data-astro-cid-ekm3e3ak><li data-astro-cid-ekm3e3ak><a href="/blog" className="topic" data-astro-cid-ekm3e3ak>All <span className="note" data-astro-cid-ekm3e3ak>9</span></a></li><li data-astro-cid-ekm3e3ak><a href="/blog/topic/dev" className="topic" data-astro-cid-ekm3e3ak>Dev <span className="note" data-astro-cid-ekm3e3ak>5</span></a></li><li data-astro-cid-ekm3e3ak><a href="/blog/topic/ai-in-practice" className="topic" aria-current="page" data-astro-cid-ekm3e3ak>AI in practice <span className="note" data-astro-cid-ekm3e3ak>1</span></a></li><li data-astro-cid-ekm3e3ak><a href="/blog/topic/reviews" className="topic" data-astro-cid-ekm3e3ak>Reviews <span className="note" data-astro-cid-ekm3e3ak>1</span></a></li><li data-astro-cid-ekm3e3ak><a href="/blog/topic/freelance" className="topic" data-astro-cid-ekm3e3ak>Freelance <span className="note" data-astro-cid-ekm3e3ak>2</span></a></li></ul></nav></section><section className="section wrap" data-astro-cid-ekm3e3ak><header className="section-head" data-astro-cid-ekm3e3ak>[01] Index<span className="note note--ink" data-astro-cid-ekm3e3ak>[01] Index</span><span className="note" data-astro-cid-ekm3e3ak>1 entry · newest first</span></header><div className="year" data-astro-cid-ekm3e3ak><h2 className="year__head" data-astro-cid-ekm3e3ak><span className="year__n outline-text" data-astro-cid-ekm3e3ak>2025</span><span className="note" data-astro-cid-ekm3e3ak>1 entry</span></h2><ol className="entries" data-astro-cid-ekm3e3ak><li data-astro-cid-ekm3e3ak><a href="/blog/creating-a-custom-n8n-node-for-wordpress-managing-custom-post-types" className="entry grid-12" data-astro-cid-ekm3e3ak><span className="entry__n note" data-astro-cid-ekm3e3ak>#009</span><time className="entry__date note" dateTime="2025-06-09T00:00:00.000Z" data-astro-cid-ekm3e3ak>09 Jun 2025</time><span className="entry__main" data-astro-cid-ekm3e3ak><span className="entry__title" data-astro-cid-ekm3e3ak>Creating a custom n8n Node for WordPress: managing Custom Post Types</span><span className="entry__desc" data-astro-cid-ekm3e3ak>Learn how to build a custom n8n node for WordPress to support Custom Post Types (CPTs), handle REST API pagination, and improve automation workflows without relying on HTTP requests.</span></span><span className="entry__meta note" data-astro-cid-ekm3e3ak><span data-astro-cid-ekm3e3ak>AI in practice</span><span data-astro-cid-ekm3e3ak>4 min</span></span><span className="entry__arrow" aria-hidden="true" data-astro-cid-ekm3e3ak>→</span><span className="entry__thumb" aria-hidden="true" data-astro-cid-ekm3e3ak><img src="/_astro/n8n-nodes.DZBmC54u_Z1breze.webp" alt="" loading="lazy" data-astro-cid-ekm3e3ak="true" decoding="async" width="420" height="300" /></span></a></li></ol></div></section><section className="section wrap" data-astro-cid-ekm3e3ak><header className="section-head" data-astro-cid-ekm3e3ak><span className="note note--ink" data-astro-cid-ekm3e3ak>[02] What I write about</span><span className="note" data-astro-cid-ekm3e3ak>Four themes · written between projects</span></header><ul className="pillars grid-12" data-astro-cid-ekm3e3ak><li className="pillar" data-astro-cid-ekm3e3ak><span className="note" data-astro-cid-ekm3e3ak>01</span><h3 className="pillar__title" data-astro-cid-ekm3e3ak>Dev</h3><p className="pillar__body" data-astro-cid-ekm3e3ak>Astro, GSAP, WordPress and Drupal, performance budgets and accessibility: what actually works when an agency design has to ship. Plus the occasional homelab experiment.</p><a href="/blog/topic/dev" className="note note--ink link pillar__link" data-astro-cid-ekm3e3ak>5 entries →</a></li><li className="pillar is-active" data-astro-cid-ekm3e3ak><span className="note" data-astro-cid-ekm3e3ak>02</span><h3 className="pillar__title" data-astro-cid-ekm3e3ak>AI in practice</h3><p className="pillar__body" data-astro-cid-ekm3e3ak>How I put language models into sites and products: RAG on existing content, agents, n8n workflows, real costs and pitfalls, and the AI-assisted setup I use every day.</p><a href="/blog/topic/ai-in-practice" className="note note--ink link pillar__link" data-astro-cid-ekm3e3ak>1 entry →</a></li><li className="pillar" data-astro-cid-ekm3e3ak><span className="note" data-astro-cid-ekm3e3ak>03</span><h3 className="pillar__title" data-astro-cid-ekm3e3ak>AI for agencies</h3><p className="pillar__body" data-astro-cid-ekm3e3ak>Use cases, workflows and adoption notes for agency owners and producers: what to automate, what to keep human, how to brief an AI feature.</p><span className="note pillar__link" data-astro-cid-ekm3e3ak>First entry coming soon</span></li><li className="pillar" data-astro-cid-ekm3e3ak><span className="note" data-astro-cid-ekm3e3ak>04</span><h3 className="pillar__title" data-astro-cid-ekm3e3ak>Reviews</h3><p className="pillar__body" data-astro-cid-ekm3e3ak>Short, honest reviews of the books and tools that shape how I work: design systems, AI engineering, freelancing.</p><a href="/blog/topic/reviews" className="note note--ink link pillar__link" data-astro-cid-ekm3e3ak>1 entry →</a></li></ul></section><section className="section wrap subscribe" data-astro-cid-ekm3e3ak><header className="section-head" data-astro-cid-ekm3e3ak><span className="note note--ink" data-astro-cid-ekm3e3ak>[03] Subscribe</span><span className="note" data-astro-cid-ekm3e3ak>LinkedIn · in English</span></header><div className="grid-12" data-astro-cid-ekm3e3ak><h2 className="h2 subscribe__title" data-astro-cid-ekm3e3ak>No schedule. No newsletter spam.</h2><div className="subscribe__body" data-astro-cid-ekm3e3ak><p data-astro-cid-ekm3e3ak>Follow along on LinkedIn, where every post goes out the day it's published. Got a topic you'd like me to dig into, or a project behind the question? Write me.</p><div className="bhead__actions" data-astro-cid-ekm3e3ak><a href="https://www.linkedin.com/in/thanzeer-j/" className="btn" target="_blank" rel="me noopener" data-astro-cid-ekm3e3ak>LinkedIn <span className="arrow" data-astro-cid-ekm3e3ak>↗</span></a><a href="/contact" className="btn btn--ghost" data-astro-cid-ekm3e3ak>Suggest a topic</a></div></div></div></section>
+      <section className="bhead wrap" data-astro-cid-ekm3e3ak>
+        <div className="bhead__top note" data-astro-cid-ekm3e3ak>
+          <nav aria-label="Breadcrumb" data-astro-cid-ekm3e3ak>
+            <Link href="/" className="link" data-astro-cid-ekm3e3ak>Home</Link> / <Link href="/blog" className="link" data-astro-cid-ekm3e3ak>Blog</Link> / <span className="note--ink" data-astro-cid-ekm3e3ak>AI in practice</span>
+          </nav>
+          <span data-astro-cid-ekm3e3ak>[Blog / 04]</span>
+          <span className="hide-sm" data-astro-cid-ekm3e3ak>Dev · AI · Agencies · Reviews</span>
+          <span data-astro-cid-ekm3e3ak>Notes from current work</span>
+        </div>
+        <h1 className="bhead__title" data-astro-cid-ekm3e3ak>
+          <span className="bhead__human display" data-astro-cid-ekm3e3ak>AI in practice.</span>
+          <span className="bhead__machine h3" data-astro-cid-ekm3e3ak>LLMs, agents and automations, shipped for real.</span>
+        </h1>
+        <span className="bhead__dim note" aria-hidden="true" data-astro-cid-ekm3e3ak>↤ h1 · var(--step-5) · ls −0.055em ↦</span>
+        <div className="bhead__foot grid-12" data-astro-cid-ekm3e3ak>
+          <p className="bhead__lead lead" data-astro-cid-ekm3e3ak>
+            How I put language models into sites and products: RAG on existing content, agents, n8n workflows, real costs and pitfalls, and the AI-assisted setup I use every day.
+          </p>
+          <dl className="spec" data-astro-cid-ekm3e3ak>
+            <div data-astro-cid-ekm3e3ak>
+              <dt className="note" data-astro-cid-ekm3e3ak>Entries</dt>
+              <dd data-astro-cid-ekm3e3ak>00</dd>
+            </div>
+            <div data-astro-cid-ekm3e3ak>
+              <dt className="note" data-astro-cid-ekm3e3ak>Words</dt>
+              <dd data-astro-cid-ekm3e3ak>0</dd>
+            </div>
+            <div data-astro-cid-ekm3e3ak>
+              <dt className="note" data-astro-cid-ekm3e3ak>Since</dt>
+              <dd data-astro-cid-ekm3e3ak>2026</dd>
+            </div>
+            <div data-astro-cid-ekm3e3ak>
+              <dt className="note" data-astro-cid-ekm3e3ak>Last entry</dt>
+              <dd data-astro-cid-ekm3e3ak>Coming soon</dd>
+            </div>
+          </dl>
+        </div>
+        <nav className="topics" aria-label="Topics" data-astro-cid-ekm3e3ak>
+          <ul data-astro-cid-ekm3e3ak>
+            <li data-astro-cid-ekm3e3ak><Link href="/blog" className="topic" data-astro-cid-ekm3e3ak>All <span className="note" data-astro-cid-ekm3e3ak>7</span></Link></li>
+            <li data-astro-cid-ekm3e3ak><Link href="/blog/topic/dev" className="topic" data-astro-cid-ekm3e3ak>Dev <span className="note" data-astro-cid-ekm3e3ak>5</span></Link></li>
+            <li data-astro-cid-ekm3e3ak><Link href="/blog/topic/ai-in-practice" className="topic" aria-current="page" data-astro-cid-ekm3e3ak>AI in practice <span className="note" data-astro-cid-ekm3e3ak>0</span></Link></li>
+            <li data-astro-cid-ekm3e3ak><Link href="/blog/topic/reviews" className="topic" data-astro-cid-ekm3e3ak>Reviews <span className="note" data-astro-cid-ekm3e3ak>0</span></Link></li>
+            <li data-astro-cid-ekm3e3ak><Link href="/blog/topic/freelance" className="topic" data-astro-cid-ekm3e3ak>Freelance <span className="note" data-astro-cid-ekm3e3ak>2</span></Link></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section className="section wrap" data-astro-cid-ekm3e3ak>
+        <header className="section-head" data-astro-cid-ekm3e3ak>
+          <span className="note note--ink" data-astro-cid-ekm3e3ak>[01] Index</span>
+          <span className="note" data-astro-cid-ekm3e3ak>0 entries</span>
+        </header>
+        <p className="note" style={{ padding: "2.5rem 0", color: "var(--muted)" }}>
+          No articles currently published in this topic. New notes coming soon.
+        </p>
+      </section>
+
+      <section className="section wrap subscribe" data-astro-cid-ekm3e3ak>
+        <header className="section-head" data-astro-cid-ekm3e3ak>
+          <span className="note note--ink" data-astro-cid-ekm3e3ak>[03] Subscribe</span>
+          <span className="note" data-astro-cid-ekm3e3ak>LinkedIn · in English</span>
+        </header>
+        <div className="grid-12" data-astro-cid-ekm3e3ak>
+          <h2 className="h2 subscribe__title" data-astro-cid-ekm3e3ak>No schedule. No newsletter spam.</h2>
+          <div className="subscribe__body" data-astro-cid-ekm3e3ak>
+            <p data-astro-cid-ekm3e3ak>Follow along on LinkedIn, where every post goes out the day it&apos;s published.</p>
+            <div className="bhead__actions" data-astro-cid-ekm3e3ak>
+              <a href="https://www.linkedin.com/in/thanzeer-j/" className="btn" target="_blank" rel="me noopener" data-astro-cid-ekm3e3ak>LinkedIn <span className="arrow" data-astro-cid-ekm3e3ak>↗</span></a>
+              <Link href="/contact" className="btn btn--ghost" data-astro-cid-ekm3e3ak>Suggest a topic</Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

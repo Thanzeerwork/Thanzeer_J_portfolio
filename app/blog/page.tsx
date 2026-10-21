@@ -1,23 +1,31 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { BLOG_POSTS } from "@/data/blog";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Engineering & Development Blog | Thanzeer J",
-  description: "Field notes on modern web and mobile application development, full-stack architecture, and software engineering.",
-};
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { BLOG_POSTS, type BlogPostMeta } from "@/data/blog";
+import { fetchBlogPosts } from "@/lib/firebase/firestore";
 
 export default function BlogIndexPage() {
-  const featured = BLOG_POSTS[0];
-  const remaining = BLOG_POSTS.slice(1);
+  const [posts, setPosts] = useState<BlogPostMeta[]>(BLOG_POSTS);
+
+  useEffect(() => {
+    fetchBlogPosts().then((res) => {
+      if (res.posts && res.posts.length > 0) {
+        setPosts(res.posts);
+      }
+    });
+  }, []);
+
+  const featured = posts[0] || BLOG_POSTS[0];
+  const remaining = posts.slice(1);
 
   const posts2025 = remaining.filter((p) => p.date.startsWith("2025"));
   const posts2024 = remaining.filter((p) => p.date.startsWith("2024"));
 
-  const devCount = BLOG_POSTS.filter((p) => p.topicSlug === "dev").length;
-  const aiCount = BLOG_POSTS.filter((p) => p.topicSlug === "ai-in-practice").length;
-  const reviewsCount = BLOG_POSTS.filter((p) => p.topicSlug === "reviews").length;
-  const freelanceCount = BLOG_POSTS.filter((p) => p.topicSlug === "freelance").length;
+  const devCount = posts.filter((p) => p.topicSlug === "dev").length;
+  const aiCount = posts.filter((p) => p.topicSlug === "ai-in-practice").length;
+  const reviewsCount = posts.filter((p) => p.topicSlug === "reviews").length;
+  const freelanceCount = posts.filter((p) => p.topicSlug === "freelance").length;
 
   return (
     <>
@@ -48,7 +56,7 @@ export default function BlogIndexPage() {
           <dl className="spec" data-astro-cid-ekm3e3ak>
             <div data-astro-cid-ekm3e3ak>
               <dt className="note" data-astro-cid-ekm3e3ak>Entries</dt>
-              <dd data-astro-cid-ekm3e3ak>{BLOG_POSTS.length < 10 ? `0${BLOG_POSTS.length}` : BLOG_POSTS.length}</dd>
+              <dd data-astro-cid-ekm3e3ak>{posts.length < 10 ? `0${posts.length}` : posts.length}</dd>
             </div>
             <div data-astro-cid-ekm3e3ak>
               <dt className="note" data-astro-cid-ekm3e3ak>Words</dt>
@@ -60,18 +68,16 @@ export default function BlogIndexPage() {
             </div>
             <div data-astro-cid-ekm3e3ak>
               <dt className="note" data-astro-cid-ekm3e3ak>Last entry</dt>
-              <dd data-astro-cid-ekm3e3ak>{featured.formattedDate}</dd>
+              <dd data-astro-cid-ekm3e3ak>{featured?.formattedDate || "Recent"}</dd>
             </div>
           </dl>
-
-
         </div>
 
         <nav className="topics" aria-label="Topics" data-astro-cid-ekm3e3ak>
           <ul data-astro-cid-ekm3e3ak>
             <li data-astro-cid-ekm3e3ak>
               <Link href="/blog" className="topic" aria-current="page" data-astro-cid-ekm3e3ak>
-                All <span className="note" data-astro-cid-ekm3e3ak>{BLOG_POSTS.length}</span>
+                All <span className="note" data-astro-cid-ekm3e3ak>{posts.length}</span>
               </Link>
             </li>
             <li data-astro-cid-ekm3e3ak>
@@ -102,7 +108,7 @@ export default function BlogIndexPage() {
         <section className="section wrap featured" data-astro-cid-ekm3e3ak>
           <header className="section-head" data-astro-cid-ekm3e3ak>
             <span className="note note--ink" data-astro-cid-ekm3e3ak>Latest entry</span>
-            <span className="note" data-astro-cid-ekm3e3ak>#00{BLOG_POSTS.length}</span>
+            <span className="note" data-astro-cid-ekm3e3ak>#00{posts.length}</span>
           </header>
 
           <Link href={`/blog/${featured.slug}`} className="feat grid-12" data-astro-cid-ekm3e3ak>

@@ -710,6 +710,35 @@ html.lenis body {
 @media (width <= 960px) {
   .site-header {
     grid-template-columns: 1fr auto;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 4.25rem !important;
+    z-index: 100 !important;
+    background-color: var(--bg) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid var(--line-strong) !important;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.08) !important;
+    animation: none !important;
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .site-header::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background-color: var(--bg) !important;
+    opacity: 0.98 !important;
+    z-index: -1 !important;
+    animation: none !important;
+  }
+  .hd-rule {
+    display: block !important;
+    animation: none !important;
   }
   .nav,
   .brand__role,
@@ -724,6 +753,15 @@ html.lenis body {
   .header-cta {
     display: none;
   }
+}
+
+/* Ensure preloader and transition overlay never flicker or flash */
+.preloader,
+.pt {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* ===== FOOTER ===== */

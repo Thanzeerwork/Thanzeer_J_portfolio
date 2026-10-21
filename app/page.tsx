@@ -5,7 +5,7 @@ import { AgencyStats } from "@/components/AgencyStats";
 import { AgencyTestimonials } from "@/components/AgencyTestimonials";
 import { ExpandedWorkShowcase } from "@/components/ExpandedWorkShowcase";
 import { SelectedWork } from "@/components/SelectedWork";
-import { BLOG_POSTS } from "@/data/blog";
+import { HomeBlogSection } from "@/components/HomeBlogSection";
 
 export const metadata: Metadata = {
   title: "Thanzeer J | Full-Stack Developer & Software Developer",
@@ -42,23 +42,8 @@ export default function Home() {
 
       <section className="section wrap" id="process" data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[05] How I Approach Development</span><span className="note" data-astro-cid-lcdefpme>From problem to working application</span></header><h2 className="h2 process__claim" data-reveal="lines" data-astro-cid-lcdefpme>Understanding the problem before choosing the technical solution.</h2><div className="process__line" data-draw data-astro-cid-lcdefpme></div><ol className="process grid-12" data-astro-cid-lcdefpme><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>01</span><h3 className="step__title" data-astro-cid-lcdefpme>Understand</h3><p className="step__body" data-astro-cid-lcdefpme>Identify the core problem, intended users, essential features, and expected functional outcomes.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>02</span><h3 className="step__title" data-astro-cid-lcdefpme>Plan</h3><p className="step__body" data-astro-cid-lcdefpme>Break the application into manageable components, define user journeys, and plan data workflows.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>03</span><h3 className="step__title" data-astro-cid-lcdefpme>Design & Develop</h3><p className="step__body" data-astro-cid-lcdefpme>Implement responsive, component-based user interfaces and connect backend services and databases.</p></li><li className="step" data-reveal="up" data-astro-cid-lcdefpme><span className="step__dot" aria-hidden="true" data-astro-cid-lcdefpme></span><span className="note" data-astro-cid-lcdefpme>04</span><h3 className="step__title" data-astro-cid-lcdefpme>Test & Improve</h3><p className="step__body" data-astro-cid-lcdefpme>Check user interactions, input handling, and iteratively refine the software through continued learning.</p></li></ol></section>
 
-    <section className="section wrap" id="blog" data-astro-cid-lcdefpme>
-      <header className="section-head" data-astro-cid-lcdefpme>
-        <span className="note note--ink" data-astro-cid-lcdefpme>[05] From the blog</span>
-        <Link href="/blog" className="note link" data-astro-cid-lcdefpme>All posts →</Link>
-      </header>
-      <ul className="posts" data-astro-cid-lcdefpme>
-        {BLOG_POSTS.slice(0, 3).map((post) => (
-          <li key={post.slug} data-reveal="up" data-astro-cid-lcdefpme>
-            <Link href={`/blog/${post.slug}`} className="post grid-12" data-astro-cid-lcdefpme>
-              <span className="post__date note" data-astro-cid-lcdefpme>{post.formattedDate}</span>
-              <span className="post__title h3" data-astro-cid-lcdefpme>{post.title}</span>
-              <span className="post__pillar note" data-astro-cid-lcdefpme>{post.topic}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <HomeBlogSection />
+
 
       <section className="section wrap cta" data-astro-cid-lcdefpme><header className="section-head" data-astro-cid-lcdefpme><span className="note note--ink" data-astro-cid-lcdefpme>[06] Next</span><span className="note" data-astro-cid-lcdefpme>30 minutes</span></header><h2 className="display cta__title" data-reveal="lines" data-astro-cid-lcdefpme>Have an idea worth building?</h2><div className="cta__actions" data-reveal="up" data-astro-cid-lcdefpme><a href="mailto:thanzeerwork@gmail.com" className="btn" target="_blank" rel="noopener" data-astro-cid-lcdefpme>Send Me an Email <span className="arrow" data-astro-cid-lcdefpme>↗</span></a><a href="https://www.linkedin.com/in/thanzeer-j/" target="_blank" rel="noopener noreferrer" className="btn btn--ghost" data-astro-cid-lcdefpme>Connect on LinkedIn</a></div></section>
     </>

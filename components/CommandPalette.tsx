@@ -4,7 +4,8 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { PROJECTS } from "@/data/projects";
 import { SERVICES } from "@/data/services";
-import { BLOG_POSTS } from "@/data/blog";
+import { BLOG_POSTS, BlogPostMeta } from "@/data/blog";
+import { fetchBlogPosts } from "@/lib/firebase/firestore";
 
 interface PaletteItem {
   id: string;
@@ -20,6 +21,17 @@ export function CommandPalette() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [blogPosts, setBlogPosts] = useState<BlogPostMeta[]>(BLOG_POSTS);
+
+  useEffect(() => {
+    fetchBlogPosts()
+      .then((res) => {
+        if (res.posts && res.posts.length > 0) {
+          setBlogPosts(res.posts);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const items: PaletteItem[] = useMemo(() => {
     const baseNav: PaletteItem[] = [
@@ -106,7 +118,7 @@ export function CommandPalette() {
       action: () => router.push(`/services/${s.slug}`),
     }));
 
-    const blogItems: PaletteItem[] = BLOG_POSTS.map((b) => ({
+    const blogItems: PaletteItem[] = blogPosts.map((b) => ({
       id: `post-${b.slug}`,
       title: b.title,
       category: `Blog / ${b.topic}`,
@@ -154,7 +166,7 @@ export function CommandPalette() {
   ];
 
   return [...baseNav, ...projectItems, ...serviceItems, ...blogItems, ...prefItems];
-  }, [router]);
+  }, [router, blogPosts]);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return items;

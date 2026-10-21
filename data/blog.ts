@@ -13,19 +13,6 @@ export interface BlogPostMeta {
 
 export const BLOG_POSTS: BlogPostMeta[] = [
   {
-    slug: "creating-a-custom-n8n-node-for-wordpress-managing-custom-post-types",
-    title: "Creating a custom n8n Node for WordPress: managing Custom Post Types",
-    date: "2025-06-09",
-    formattedDate: "09 Jun 2025",
-    topic: "AI in practice",
-    topicSlug: "ai-in-practice",
-    readingTime: "8 min",
-    excerpt:
-      "How to dynamically populate WordPress custom post types within custom n8n workflow nodes, connecting automated editorial pipelines to headless REST APIs.",
-    featured: true,
-    image: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/blog/n8n-nodes.DZBmC54u_3hPav.webp",
-  },
-  {
     slug: "how-to-buld-a-desktop-kubernetescluster-with-turing-pi2-part-2",
     title: "How to Build a Desktop Kubernetes Cluster with Turing Pi 2 - part 2",
     date: "2025-04-21",
@@ -76,19 +63,6 @@ export const BLOG_POSTS: BlogPostMeta[] = [
       "Starting with high-contrast wireframes, strict typographic scales, and semantic layout boundaries before opening color palettes or illustration decks.",
     featured: false,
     image: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/front-io.B86nOX4n_CdsG9.webp",
-  },
-  {
-    slug: "hidden-potential-by-adam-grant-review",
-    title: "Hidden Potential by Adam Grant: Notes for Independent Builders",
-    date: "2025-01-20",
-    formattedDate: "20 Jan 2025",
-    topic: "Reviews",
-    topicSlug: "reviews",
-    readingTime: "5 min",
-    excerpt:
-      "Key takeaways on deliberate practice, scaffolding difficult skills, and overcoming technical plateaus as a solo practitioner.",
-    featured: false,
-    image: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/blog/hidden-potential-adam-grant.CvrPDBjT_1PADv2.webp",
   },
   {
     slug: "freelance-and-full-remote-a-guide-to-surviving-part-2",

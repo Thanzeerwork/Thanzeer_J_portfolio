@@ -12,9 +12,8 @@ export function ThemeScript() {
             root.dataset.theme = theme;
             root.dataset.accent = read("pg-accent") ?? "blue";
             root.classList.add("js");
-            let seen = null;
-            try { seen = sessionStorage.getItem("pg-preloaded"); } catch {}
-            if (seen || matchMedia("(prefers-reduced-motion: reduce)").matches) root.dataset.preloaded = "yes";
+            root.dataset.preloaded = "yes";
+            try { sessionStorage.setItem("pg-preloaded", "1"); } catch {}
           })();
         `,
       }}

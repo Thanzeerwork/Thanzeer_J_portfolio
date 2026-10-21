@@ -172,6 +172,11 @@ export async function fetchBlogPosts(): Promise<{ posts: BlogPostMeta[]; isLiveF
       const snapshot = await getDocs(q);
       if (!snapshot.empty) {
         const list = snapshot.docs.map((d) => d.data() as BlogPostMeta);
+        if (typeof window !== "undefined") {
+          try {
+            localStorage.setItem(STORAGE_BLOG_KEY, JSON.stringify(list));
+          } catch {}
+        }
         return { posts: list, isLiveFirestore: true };
       }
     } catch (err) {
