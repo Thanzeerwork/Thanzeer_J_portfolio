@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { fetchProjects, saveProject, deleteProject } from "@/lib/firebase/firestore";
 import { Project, ProjectMetric } from "@/data/projects";
+import RichContentEditor from "@/components/admin/RichContentEditor";
 
 const EMPTY_PROJECT: Project = {
   id: "",
@@ -25,6 +26,7 @@ const EMPTY_PROJECT: Project = {
   githubUrl: "",
   accent: "#2f5bff",
   imageUrl: "",
+  content: "",
 };
 
 export default function AdminProjectsPage() {
@@ -64,7 +66,11 @@ export default function AdminProjectsPage() {
   }, []);
 
   const handleOpenEdit = (project: Project) => {
-    setEditingProject({ ...project, imageUrl: project.imageUrl || "" });
+    setEditingProject({
+      ...project,
+      imageUrl: project.imageUrl || "",
+      content: project.content || project.description || "",
+    });
     setStackInput((project.stack || []).join(", "));
     setDeliverablesInput((project.deliverables || []).join(", "));
     setIsNew(false);
@@ -77,6 +83,7 @@ export default function AdminProjectsPage() {
       id: `project-${Date.now()}`,
       n: nextN,
       imageUrl: "",
+      content: "",
     };
     setEditingProject(newProj);
     setStackInput(newProj.stack.join(", "));
@@ -368,7 +375,7 @@ export default function AdminProjectsPage() {
       {/* Create / Edit Modal */}
       {editingProject && (
         <div className="admin-modal-backdrop" onClick={() => setEditingProject(null)}>
-          <div className="admin-modal-panel" onClick={(e) => e.stopPropagation()}>
+          <div className="admin-modal-panel admin-modal-panel-lg" onClick={(e) => e.stopPropagation()}>
             <div style={{ padding: "1.5rem 1.75rem", borderBottom: "1px solid var(--admin-border)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div>
                 <span className="admin-label">[{isNew ? "Create" : "Edit"} Project]</span>
@@ -618,7 +625,7 @@ export default function AdminProjectsPage() {
 
               <div>
                 <label className="admin-label" style={{ display: "block", marginBottom: "0.4rem" }}>
-                  Summary
+                  Summary / Brief Description (for project cards &amp; overview)
                 </label>
                 <textarea
                   className="admin-textarea"
@@ -667,6 +674,21 @@ export default function AdminProjectsPage() {
                   placeholder="How you architected and built the solution..."
                 />
               </div>
+
+              {/* Detailed Description & Case Study Contents with Direct File Image Upload */}
+              <RichContentEditor
+                value={editingProject.content || editingProject.description || ""}
+                onChange={(content) =>
+                  setEditingProject({
+                    ...editingProject,
+                    content,
+                    description: content,
+                  })
+                }
+                folder="projects"
+                label="Detailed Description &amp; Case Study Contents (with Direct Images)"
+                placeholder="Write an in-depth case study and architectural breakdown in Markdown...&#10;&#10;## Project Architecture&#10;Detail the system design, frontend state management, and API design...&#10;&#10;Click '📷 Add Image from File' above or drag &amp; drop photos directly here to embed UI screenshots, wireframes, and architecture diagrams!&#10;&#10;```typescript&#10;// Key implementation code&#10;```&#10;&#10;## Technical Challenges &amp; Key Insights&#10;What made this build unique and how was it achieved?"
+              />
 
               {/* Metrics Editor */}
               <div>

@@ -22,6 +22,8 @@ export interface Project {
   githubUrl?: string;
   accent: string;
   imageUrl?: string;
+  content?: string;
+  description?: string;
 }
 
 export const PROJECTS: Project[] = [

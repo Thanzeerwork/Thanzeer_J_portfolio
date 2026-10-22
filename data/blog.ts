@@ -9,6 +9,7 @@ export interface BlogPostMeta {
   excerpt: string;
   featured: boolean;
   image?: string;
+  content?: string;
 }
 
 export const BLOG_POSTS: BlogPostMeta[] = [

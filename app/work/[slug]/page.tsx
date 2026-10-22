@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PROJECTS } from "@/data/projects";
+import { fetchProjects } from "@/lib/firebase/firestore";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -13,7 +15,13 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.id === slug);
+  let project = PROJECTS.find((p) => p.id === slug);
+  if (!project) {
+    try {
+      const res = await fetchProjects();
+      project = res.projects.find((p) => p.id === slug);
+    } catch {}
+  }
 
   if (!project) {
     return {
@@ -29,7 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
-  const project = PROJECTS.find((p) => p.id === slug);
+  let project = PROJECTS.find((p) => p.id === slug);
+  if (!project) {
+    try {
+      const res = await fetchProjects();
+      project = res.projects.find((p) => p.id === slug);
+    } catch {}
+  }
 
   if (!project) {
     notFound();
@@ -206,10 +220,32 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Deep Dive / Architectural Content (if provided) */}
+      {(project.content || project.description) && (
+        <section className="section wrap" id="deep-dive">
+          <header className="section-head">
+            <span className="note note--ink">[03] Case Study &amp; Architectural Breakdown</span>
+            <span className="note">In-Depth Walkthrough</span>
+          </header>
+
+          <div
+            style={{
+              background: "var(--bg-raised)",
+              border: "1px solid var(--line)",
+              borderRadius: "4px",
+              padding: "2.5rem 2rem",
+              marginBottom: "3rem",
+            }}
+          >
+            <MarkdownRenderer content={project.content || project.description || ""} />
+          </div>
+        </section>
+      )}
+
       {/* Deliverables & Stack */}
       <section className="section wrap" id="deliverables">
         <header className="section-head">
-          <span className="note note--ink">[03] Handover Scope</span>
+          <span className="note note--ink">[{(project.content || project.description) ? "04" : "03"}] Handover Scope</span>
           <span className="note">Deliverables &amp; Stack</span>
         </header>
 
