@@ -1973,10 +1973,46 @@ kbd {
   stroke-width: 4.2px;
   stroke-linecap: square;
   stroke-linejoin: miter;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
 }
 .monogram__dot {
   fill: var(--accent);
   transition: fill var(--dur-1) var(--ease-out);
+}
+.monogram.is-plotting path {
+  animation: plot var(--dur-3) var(--ease-in-out) both;
+}
+.monogram.is-plotting .monogram__g,
+.monogram.is-plotting .monogram__j {
+  animation-delay: 0.18s;
+}
+.monogram.is-plotting .monogram__dot {
+  animation: pop var(--dur-1) var(--ease-out) 0.9s both;
+}
+@keyframes plot {
+  0% {
+    stroke-dashoffset: 1px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pop {
+  0% {
+    transform-origin: 60px 33px;
+    transform: scale(0);
+  }
+  100% {
+    transform-origin: 60px 33px;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .monogram.is-plotting path,
+  .monogram.is-plotting .monogram__dot {
+    animation: none !important;
+  }
 }
 .brand__mark {
   font-size: 1.6rem;

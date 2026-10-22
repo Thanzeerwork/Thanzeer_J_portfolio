@@ -17,6 +17,7 @@ export function Monogram({ className = "" }: { className?: string }) {
         strokeWidth="4.2"
         strokeLinecap="square"
         strokeLinejoin="miter"
+        pathLength={1}
       />
       <path
         className="monogram__g monogram__j"
@@ -26,6 +27,7 @@ export function Monogram({ className = "" }: { className?: string }) {
         strokeWidth="4.2"
         strokeLinecap="square"
         strokeLinejoin="miter"
+        pathLength={1}
       />
       <circle
         className="monogram__dot"

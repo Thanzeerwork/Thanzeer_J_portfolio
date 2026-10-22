@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Monogram } from "./Monogram";
@@ -9,6 +9,24 @@ const ACCENTS = ["blue", "orange", "lime"] as const;
 
 export function Header() {
   const pathname = usePathname();
+  const isFirstMount = useRef(true);
+
+  const triggerPlot = useCallback(() => {
+    if (typeof window === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = document.querySelector<HTMLElement>(".site-header .monogram");
+    if (!el) return;
+    el.classList.remove("is-plotting");
+    void el.offsetWidth;
+    el.classList.add("is-plotting");
+  }, []);
+
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    triggerPlot();
+  }, [pathname, triggerPlot]);
 
   if (pathname?.startsWith("/admin")) {
     return null;
@@ -44,8 +62,17 @@ export function Header() {
 
   return (
     <header className="site-header wrap">
-      <Link href="/" className="brand" aria-label="Thanzeer J, home">
-        <Monogram className="brand__mark" />
+      <Link
+        href="/"
+        className="brand"
+        aria-label="Thanzeer J, home"
+        onClick={() => {
+          if (pathname === "/") {
+            triggerPlot();
+          }
+        }}
+      >
+        <Monogram className="brand__mark is-plotting" />
         <span className="brand__name note note--ink">
           Thanzeer J
           <span className="brand__role"> / Full-Stack Dev</span>
