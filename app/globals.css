@@ -1210,16 +1210,110 @@ html.js:not([data-preloaded]) .preloader {
   bottom: 0;
 }
 
-/* ===== WORK SHOWCASE ===== */
+/* ===== WORK SHOWCASE (PIERGORELLI AUTHENTIC) ===== */
 .ws {
+  gap: clamp(3rem, 8vw, 5rem);
+  display: grid;
   position: relative;
 }
-.ws__count {
-  font-size: var(--step-5);
-  letter-spacing: -0.055em;
-  line-height: 0.86;
+.ws__count,
+.ws__stages {
+  display: none;
+}
+.ws__item {
+  flex-direction: column-reverse;
+  gap: 1.25rem;
+  display: flex;
+}
+.ws__art {
+  aspect-ratio: 8/5;
+  background: var(--bg-raised);
+  color: var(--ink);
+  border-radius: 4px;
   position: relative;
-  margin-bottom: clamp(24px, 3vw, 48px);
+  overflow: hidden;
+}
+.ws__art svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.ws__meta {
+  justify-content: space-between;
+  gap: 1rem;
+  display: flex;
+}
+.ws__title {
+  margin-top: 0.9rem;
+}
+.ws__link {
+  text-decoration: none;
+  transition: color var(--dur-1) var(--ease-out);
+}
+.ws__link:hover {
+  color: var(--accent-text);
+}
+.ws__client {
+  margin-top: 0.5rem;
+}
+.ws__summary {
+  max-width: 42ch;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+.ws__actions {
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  display: flex;
+}
+.ws__actions:not(:has(> :not([hidden]))) {
+  display: none;
+}
+
+/* PINNED STATE (DESKTOP) */
+.ws.is-pinned {
+  column-gap: var(--col-gap);
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  row-gap: 1.5rem;
+  height: calc(100svh - 5.5rem);
+  padding-block: 1.5rem;
+}
+.ws.is-pinned .ws__count {
+  grid-area: 1/1/auto/span 4;
+  display: block;
+}
+.ws.is-pinned .ws__stages {
+  grid-area: 3/1/auto/span 4;
+  display: block;
+}
+.ws.is-pinned .ws__item {
+  display: contents;
+}
+.ws.is-pinned .ws__text {
+  grid-area: 2/1/auto/span 4;
+  align-self: center;
+}
+.ws.is-pinned .ws__art {
+  grid-area: 1/5/span 3/span 8;
+  align-self: center;
+}
+.ws.is-pinned :is(.ws__text, .ws__art) {
+  will-change: opacity, transform;
+}
+.ws.is-pinned .ws__item:not([data-current]) :is(.ws__text, .ws__art) {
+  pointer-events: none;
+}
+
+.ws__count {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--step-4);
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  line-height: 0.85;
 }
 .ws__n {
   display: inline-block;
@@ -1227,83 +1321,61 @@ html.js:not([data-preloaded]) .preloader {
 .ws__of {
   display: inline;
 }
-.ws__stages {
-  margin-bottom: clamp(32px, 5vw, 80px);
-}
 .ws__stages ol {
-  display: flex;
-  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+  display: grid;
 }
 .ws__stages li {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.ws__stages li span {
-  flex: none;
-}
-.ws__stages li b {
-  flex: none;
-  font-weight: 500;
+  border-top: 2px solid var(--line);
+  padding-top: 10px;
+  position: relative;
 }
 .ws__stages li i {
-  flex: 1;
+  background: var(--ink);
+  width: 100%;
   height: 2px;
-  background: var(--line);
-  position: relative;
+  transform: scaleX(var(--p, 0));
+  transform-origin: 0;
+  position: absolute;
+  top: -2px;
+  left: 0;
 }
-.ws__item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 3vw, 48px);
-  margin-bottom: clamp(64px, 8vw, 128px);
-}
-.ws__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-}
-.ws__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-}
-.ws__title {
-  margin-top: 0.5rem;
-}
-.ws__client {
-  margin-bottom: 0.5rem;
-}
-.ws__summary {
-  max-width: 45ch;
-  color: var(--muted);
-}
-.ws__actions {
-  margin-top: 0.75rem;
-}
-.ws__link {
-  transition: color var(--dur-1) var(--ease-out);
-}
-.ws__link:hover {
+.ws__stages li[data-on] span {
   color: var(--accent-text);
 }
-.ws__art {
-  position: relative;
+.ws__stages li[data-on] i {
+  background: var(--accent);
 }
-.ws__art svg {
-  width: 100%;
-  height: auto;
+.ws__stages b {
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--ink);
+  margin-top: 4px;
+  font-weight: 500;
   display: block;
 }
-@media (width <= 960px) {
-  .ws__item {
-    grid-template-columns: 1fr;
-  }
-  .ws__art {
-    order: -1;
-  }
+.ws__rail {
+  gap: 8px;
+  margin-top: 1.25rem;
+  display: flex;
+}
+.ws__rail i {
+  background: var(--line);
+  height: 4px;
+  transition: background-color var(--dur-1);
+  flex: 1;
+}
+.ws__rail i[data-on] {
+  background: var(--ink);
+}
+
+svg [pathLength="1"] {
+  stroke-dasharray: 1 2;
 }
 
 /* SVG internals for work showcase */

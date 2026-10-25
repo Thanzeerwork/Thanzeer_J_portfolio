@@ -74,7 +74,13 @@ export async function fetchProjects(): Promise<{ projects: Project[]; isLiveFire
           }
           return p;
         });
-        return { projects: list, isLiveFirestore: true };
+
+        const merged = PROJECTS.map((def) => {
+          const found = list.find((p) => p.id === def.id);
+          return found ? { ...def, ...found } : def;
+        });
+        const extras = list.filter((p) => !PROJECTS.some((def) => def.id === p.id));
+        return { projects: [...merged, ...extras], isLiveFirestore: true };
       }
     } catch (err) {
       console.warn("Firestore fetch error, falling back to local:", err);
@@ -94,7 +100,13 @@ export async function fetchProjects(): Promise<{ projects: Project[]; isLiveFire
           }
           return p;
         });
-        return { projects: enriched, isLiveFirestore: false };
+
+        const merged = PROJECTS.map((def) => {
+          const found = enriched.find((p) => p.id === def.id);
+          return found ? { ...def, ...found } : def;
+        });
+        const extras = enriched.filter((p) => !PROJECTS.some((def) => def.id === p.id));
+        return { projects: [...merged, ...extras], isLiveFirestore: false };
       } catch {
         // ignore
       }

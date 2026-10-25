@@ -3,7 +3,6 @@ import type React from "react";
 import Link from "next/link";
 import { AgencyStats } from "@/components/AgencyStats";
 import { AgencyTestimonials } from "@/components/AgencyTestimonials";
-import { ExpandedWorkShowcase } from "@/components/ExpandedWorkShowcase";
 import { SelectedWork } from "@/components/SelectedWork";
 import { HomeBlogSection } from "@/components/HomeBlogSection";
 
@@ -24,16 +23,12 @@ export default function Home() {
       <section className="section wrap" id="work" data-astro-cid-lcdefpme>
         <header className="section-head" data-astro-cid-lcdefpme>
           <span className="note note--ink" data-astro-cid-lcdefpme>[02] Selected work</span>
-          <span className="note" data-astro-cid-lcdefpme>Interactive Engineering Viewport · Web &amp; Mobile</span>
+          <span className="note" data-astro-cid-lcdefpme>Field reports · client names under NDA</span>
         </header>
-        <p className="work__intro lead" data-reveal="up" data-astro-cid-lcdefpme style={{ marginBottom: "2.5rem" }}>
-          I believe the best way to demonstrate software development skills is through practical projects. Explore live interactive application previews, multi-layer architectural stacks, and production metrics below.
+        <p className="work__intro lead" data-reveal="up" data-astro-cid-lcdefpme>
+          Client work stays confidential. So here you&apos;ll see how each project was built, not whose it is.
         </p>
         <SelectedWork />
-      </section>
-
-      <section className="section wrap" id="featured-projects" data-astro-cid-lcdefpme>
-        <ExpandedWorkShowcase />
       </section>
 
       <AgencyTestimonials />
