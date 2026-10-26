@@ -78,13 +78,6 @@ export function CommandPalette() {
         action: () => router.push("/contact"),
       },
       {
-        id: "admin",
-        title: "Admin Dashboard",
-        category: "Management",
-        detail: "Manage content with Firebase & Cloudflare R2 storage",
-        action: () => router.push("/admin"),
-      },
-      {
         id: "copy-email",
         title: "Copy Email Address",
         category: "Connect",

@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginAdmin, DEFAULT_ADMIN_EMAIL, DEFAULT_ADMIN_PASSWORD } from "@/lib/firebase/auth";
+import { loginAdmin } from "@/lib/firebase/auth";
 import { isFirebaseConfigured } from "@/lib/firebase/config";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState(DEFAULT_ADMIN_EMAIL);
-  const [password, setPassword] = useState(DEFAULT_ADMIN_PASSWORD);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const isLive = isFirebaseConfigured();
@@ -131,7 +131,7 @@ export default function AdminLoginPage() {
               className="admin-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="thanzeerwork@gmail.com"
+              placeholder="Enter admin email"
             />
           </div>
 
@@ -145,7 +145,7 @@ export default function AdminLoginPage() {
               className="admin-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder="Enter password"
             />
           </div>
 

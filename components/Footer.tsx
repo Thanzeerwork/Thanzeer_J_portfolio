@@ -153,7 +153,6 @@ export function Footer() {
           <Link href="/privacy-policy" className="link">Privacy</Link>
           <Link href="/cookie-policy" className="link">Cookies</Link>
           <Link href="/accessibility" className="link">Accessibility</Link>
-          <Link href="/admin" className="link" style={{ opacity: 0.6 }}>Admin</Link>
         </div>
         <span className="hint">
           Press <kbd>⌘K</kbd> for quick navigation
