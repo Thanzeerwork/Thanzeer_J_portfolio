@@ -1,0 +1,46 @@
+# Thanzeer J - Full-Stack Developer & Software Engineer
+
+> Full-Stack Web Developer and Mobile App Engineer based in Kerala, India. Specializing in modern React, Next.js, React Native cross-platform applications, and cloud database integrations.
+
+## Core Information
+- Name: Thanzeer J
+- Role: Full-Stack Developer, Mobile Application Developer, Software Engineer
+- Education: Bachelor of Technology (B.Tech) in Computer Science and Engineering
+- Location: Kerala, India (10.85° N, 76.27° E · IST / UTC+5:30)
+- Email: thanzeerwork@gmail.com
+- Phone: +91 98956 54031
+- Portfolio Website: https://thanzeer-j.is-a.dev/
+- Live Platform: https://ryphtech.in/
+- GitHub: https://github.com/Thanzeerwork
+- LinkedIn: https://www.linkedin.com/in/thanzeer-j/
+
+## Technical Expertise
+- Frontend: JavaScript (ES6+), TypeScript, React.js, Next.js (App Router), Tailwind CSS, Astro, HTML5, CSS3, GSAP
+- Mobile: React Native, Expo, React Navigation, Cross-Platform Android & iOS Engineering
+- Backend & APIs: Node.js, Express.js, RESTful API Design, Serverless Functions
+- Databases & Cloud: Google Cloud Firestore, Firebase Auth & Storage, Supabase (PostgreSQL), MongoDB
+- Cloud Storage & DevOps: Cloudflare R2 Object Storage, Git, GitHub Actions, Vercel, Netlify
+
+## Production Projects & Case Studies
+- **RyphTech (2026)**: Technology brand website and digital platform built with React, Vite, and Tailwind CSS.
+  - URL: https://thanzeer-j.is-a.dev/work/ryphtech
+  - Live Demo: https://ryphtech.in/
+  - Key focus: Modern component architecture, brand positioning, 100% responsive layout, Lighthouse 98+.
+- **MealHub (2026)**: Digital canteen prebooking and order management platform built with React Native, React.js, Firebase, and Supabase.
+  - URL: https://thanzeer-j.is-a.dev/work/mealhub
+  - Key focus: Real-time food availability, advance queue reduction (70%), synchronized web and mobile ordering.
+- **Repairro (2026)**: Doorstep repair and logistics coordination platform built with React Native, Node.js, Cloud Firestore, and Express.js.
+  - URL: https://thanzeer-j.is-a.dev/work/repairro
+  - Key focus: 6-stage lifecycle coordinating customers, repair shops, inspection quotes, and delivery tracking.
+- **Student Management Portal (2025)**: Unified campus system built with React.js, Node.js, MongoDB, Express, and REST APIs.
+  - URL: https://thanzeer-j.is-a.dev/work/student-portal
+  - Key focus: Role-Based Access Control (RBAC), 10 core academic modules, automated CGPA placement eligibility filtering.
+
+## Services Offered
+1. **Web Development**: Fast, accessible, responsive websites and interactive web applications using React, Next.js, and modern CSS. (https://thanzeer-j.is-a.dev/services/web-development)
+2. **Mobile Application Development**: Cross-platform iOS and Android applications with React Native, secure authentication, and cloud data synchronization. (https://thanzeer-j.is-a.dev/services/mobile-development)
+3. **Backend & Database Integration**: Scalable database design, REST APIs, authentication gateways, and real-time data handling with Firebase, Supabase, and MongoDB. (https://thanzeer-j.is-a.dev/services/backend-database)
+
+## Documentation & Deep-Dive
+- Full documentation and architectural breakdowns: https://thanzeer-j.is-a.dev/llms-full.txt
+- Complete XML Sitemap: https://thanzeer-j.is-a.dev/sitemap.xml

@@ -23,11 +23,8 @@ export default function Home() {
       <section className="section wrap" id="work" data-astro-cid-lcdefpme>
         <header className="section-head" data-astro-cid-lcdefpme>
           <span className="note note--ink" data-astro-cid-lcdefpme>[02] Selected work</span>
-          <span className="note" data-astro-cid-lcdefpme>Field reports · client names under NDA</span>
+          <span className="note" data-astro-cid-lcdefpme>Featured Case Studies &amp; Builds</span>
         </header>
-        <p className="work__intro lead" data-reveal="up" data-astro-cid-lcdefpme>
-          Client work stays confidential. So here you&apos;ll see how each project was built, not whose it is.
-        </p>
         <SelectedWork />
       </section>
 

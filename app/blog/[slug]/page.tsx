@@ -35,9 +35,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thanzeer-j.is-a.dev";
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
+  const images = post.image ? [{ url: post.image, alt: post.title }] : [];
+
   return {
     title: `${post.title} | Thanzeer J`,
     description: post.excerpt,
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      publishedTime: post.date,
+      authors: ["Thanzeer J"],
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: post.image ? [post.image] : undefined,
+    },
   };
 }
 
@@ -49,13 +71,68 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thanzeer-j.is-a.dev";
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
   const wordCount = (post.content || post.excerpt || "")
     .trim()
     .split(/\s+/)
     .filter(Boolean).length;
 
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": `${siteUrl}/blog`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": postUrl,
+          },
+        ],
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "url": postUrl,
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "author": {
+          "@type": "Person",
+          "name": "Thanzeer J",
+          "url": siteUrl,
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Thanzeer J",
+          "url": siteUrl,
+        },
+        "wordCount": wordCount,
+        ...(post.image ? { "image": post.image } : {}),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <article className="article wrap" data-astro-cid-zg7dkzxc>
         <header className="article__head" data-astro-cid-zg7dkzxc>
           <nav className="note crumbs" aria-label="Breadcrumb" data-astro-cid-zg7dkzxc>

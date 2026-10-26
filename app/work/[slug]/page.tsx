@@ -29,9 +29,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thanzeer-j.is-a.dev";
+  const projectUrl = `${siteUrl}/work/${project.id}`;
+  const images = project.imageUrl
+    ? [{ url: project.imageUrl, alt: `${project.title} Preview` }]
+    : [];
+
   return {
     title: `${project.title} · Case Study | Thanzeer J`,
     description: project.summary,
+    alternates: {
+      canonical: projectUrl,
+    },
+    keywords: [
+      project.title,
+      ...project.stack,
+      "Thanzeer J",
+      "Case Study",
+      "Full-Stack Development",
+      "Software Engineering",
+    ],
+    openGraph: {
+      type: "article",
+      title: `${project.title} · Case Study`,
+      description: project.summary,
+      url: projectUrl,
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} · Case Study`,
+      description: project.summary,
+      images: project.imageUrl ? [project.imageUrl] : undefined,
+    },
   };
 }
 
@@ -49,9 +79,73 @@ export default async function ProjectPage({ params }: Props) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thanzeer-j.is-a.dev";
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Work",
+            "item": `${siteUrl}/#work`,
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.title,
+            "item": `${siteUrl}/work/${project.id}`,
+          },
+        ],
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": project.title,
+        "headline": project.title,
+        "description": project.summary,
+        "url": `${siteUrl}/work/${project.id}`,
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "author": {
+          "@type": "Person",
+          "name": "Thanzeer J",
+          "url": siteUrl,
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+        },
+        ...(project.imageUrl ? { "image": project.imageUrl } : {}),
+      },
+    ],
+  };
+
   return (
     <>
-      <section className="hero wrap" data-hero>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
+      <section
+        className="wrap"
+        style={{
+          minHeight: "auto",
+          paddingTop: "clamp(5.5rem, 8vw, 7.5rem)",
+          paddingBottom: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.75rem",
+        }}
+      >
         <nav className="note crumbs" aria-label="Breadcrumb">
           <Link href="/" className="link">
             Home
@@ -63,15 +157,64 @@ export default async function ProjectPage({ params }: Props) {
           / <span className="note--ink">{project.title}</span>
         </nav>
 
-        <p className="note">[Work / {project.n} · Case study · {project.year}]</p>
+        <p className="note" style={{ margin: "0.25rem 0" }}>
+          [Work / {project.n} · Case study · {project.year}]
+        </p>
 
-        <h1 className="hero__title">
-          <span className="display hero__human">{project.title}</span>
-          <span className="h2 hero__machine">{project.summary}</span>
-        </h1>
+        <header style={{ marginTop: "0.25rem", marginBottom: "0.75rem" }}>
+          <h1
+            style={{
+              fontSize: "clamp(1.75rem, 3.8vw, 2.75rem)",
+              fontWeight: 600,
+              lineHeight: 1.18,
+              letterSpacing: "-0.03em",
+              color: "var(--ink)",
+              margin: "0 0 1rem 0",
+              textWrap: "balance",
+              maxWidth: "28ch",
+            }}
+          >
+            {project.title}
+          </h1>
+          <p
+            style={{
+              fontSize: "clamp(1.025rem, 1.6vw, 1.25rem)",
+              fontWeight: 400,
+              lineHeight: 1.6,
+              color: "var(--muted)",
+              maxWidth: "65ch",
+              letterSpacing: "-0.01em",
+              margin: 0,
+            }}
+          >
+            {project.summary}
+          </p>
+        </header>
 
-        <div className="hero__foot" data-hero-fade>
-          <p className="lead">
+        <div
+          className="hero__foot"
+          data-hero-fade
+          style={{
+            borderTop: "1px solid var(--line)",
+            paddingTop: "1.5rem",
+            marginTop: "0.5rem",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            gap: "1.5rem 3rem",
+          }}
+        >
+          <p
+            className="lead"
+            style={{
+              fontSize: "clamp(0.95rem, 1.4vw, 1.125rem)",
+              maxWidth: "42ch",
+              color: "var(--muted)",
+              lineHeight: 1.55,
+              margin: 0,
+            }}
+          >
             Delivered for <strong>{project.client}</strong> as <em>{project.role}</em>.
           </p>
 
@@ -311,10 +454,10 @@ export default async function ProjectPage({ params }: Props) {
               }}
             >
               <span className="note note--ink" style={{ display: "block", marginBottom: "0.5rem" }}>
-                Under-NDA Protection
+                Engineering &amp; Architecture Note
               </span>
               <p className="note" style={{ color: "var(--muted)", margin: 0, lineHeight: 1.5 }}>
-                Code repository, proprietary algorithms, and sensitive client metrics are anonymized under mutual NDA. Full architecture diagrams available upon verified consultation.
+                Production implementations, architectural diagrams, and code structures reflect real-world builds. Complete repositories, interactive demos, and component breakdowns are available for technical evaluation.
               </p>
             </div>
           </div>

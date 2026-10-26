@@ -7,6 +7,9 @@ import { GridOverlay } from "@/components/GridOverlay";
 import { CommandPalette } from "@/components/CommandPalette";
 import { MotionController } from "@/components/MotionController";
 import { Preloader } from "@/components/Preloader";
+import { JsonLd } from "@/components/JsonLd";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://thanzeer-j.is-a.dev";
 
 export const metadata: Metadata = {
   title: {
@@ -14,36 +17,73 @@ export const metadata: Metadata = {
     template: "%s | Thanzeer J",
   },
   description:
-    "Explore the portfolio of Thanzeer J, a Computer Science and Engineering graduate focused on JavaScript, React, web development, mobile applications, and practical software solutions.",
-  metadataBase: new URL("https://ryphtech.in"),
+    "Portfolio of Thanzeer J, a Full-Stack Developer & Software Engineer specializing in React, Next.js, React Native, Node.js, and cloud database integrations. Explore live case studies and digital builds.",
+  metadataBase: new URL(siteUrl),
+  authors: [{ name: "Thanzeer J", url: siteUrl }],
+  creator: "Thanzeer J",
+  publisher: "Thanzeer J",
   keywords: [
     "Thanzeer J",
+    "Thanzeer J portfolio",
+    "Thanzeer J developer",
     "Full-Stack Developer",
+    "Full-Stack Developer Kerala",
     "Software Developer",
+    "Software Engineer India",
     "React Developer",
+    "Next.js Developer",
     "JavaScript Developer",
+    "TypeScript Developer",
     "Web Developer",
     "Mobile Application Developer",
-    "React Native",
-    "Portfolio",
+    "React Native Developer",
     "RyphTech",
+    "MealHub",
+    "Repairro",
+    "Cloud Firestore Developer",
+    "Supabase Developer",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    title: "Thanzeer J — Full-Stack Developer",
+    title: "Thanzeer J — Full-Stack Developer & Software Developer",
     description:
-      "Discover my projects, development skills, and approach to building responsive websites, mobile applications, and useful digital products.",
-    url: "https://ryphtech.in/",
+      "Explore production case studies, development architecture, and mobile apps built with React, React Native, and Cloud Firestore.",
+    url: siteUrl,
     siteName: "Thanzeer J Portfolio",
     locale: "en_US",
+    images: [
+      {
+        url: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ryphtech-live.png",
+        width: 1200,
+        height: 630,
+        alt: "Thanzeer J - Full-Stack Developer Portfolio & Case Studies",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Thanzeer J — Full-Stack Developer & Software Developer",
+    description:
+      "Explore production case studies, development architecture, and mobile apps built with React, React Native, and Cloud Firestore.",
+    images: ["https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ryphtech-live.png"],
   },
   icons: {
     icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   alternates: {
+    canonical: "./",
     types: {
       "application/rss+xml": "/rss.xml",
     },
@@ -59,6 +99,7 @@ export default function RootLayout({
     <html lang="en" data-theme="light" data-accent="blue" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <JsonLd />
         <script
           defer
           src="https://cloud.umami.is/script.js"

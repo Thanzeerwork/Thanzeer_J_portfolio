@@ -1,5 +1,42 @@
+# robots.txt for Thanzeer J Portfolio & RyphTech Platform
+# Crawl rules for Search Engines and AI Answer Engines (AEO)
+
+# Search Engine Crawlers (Google, Bing, Yahoo, DuckDuckGo, etc.)
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# AI Search & Answer Engine Crawlers (AEO: OpenAI, Anthropic, Perplexity, Apple, Google SGE)
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: FacebookBot
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+
+# Default for all other crawlers
 User-agent: *
 Allow: /
-Disallow: /~partytown/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
 
-Sitemap: https://ryphtech.in/sitemap-index.xml
+# XML Sitemaps
+Sitemap: https://thanzeer-j.is-a.dev/sitemap.xml
+Sitemap: https://ryphtech.in/sitemap.xml
