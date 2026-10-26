@@ -7,22 +7,31 @@ import "./Preloader.css";
 
 export function Preloader() {
   const pathname = usePathname();
+  const [prevPath, setPrevPath] = useState(pathname);
   const [mounted, setMounted] = useState(true);
   const [count, setCount] = useState(0);
   const [isLifting, setIsLifting] = useState(false);
   const [playId, setPlayId] = useState(0);
 
-  const startAnimation = useCallback(() => {
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  // Synchronously react to route changes during render to immediately show the preloader over the new page
+  if (prevPath !== pathname) {
+    setPrevPath(pathname);
+    if (!pathname?.startsWith("/admin")) {
+      setMounted(true);
+      setCount(0);
+      setIsLifting(false);
+      setPlayId((p) => p + 1);
+    } else {
       setMounted(false);
-      return;
     }
+  }
 
+  const startAnimation = useCallback(() => {
     setMounted(true);
     setCount(0);
     setIsLifting(false);
 
-    const duration = 1150;
+    const duration = 1100;
     const startTime = performance.now();
     let rafId: number;
 
@@ -41,11 +50,11 @@ export function Preloader() {
 
     const liftTimer = setTimeout(() => {
       setIsLifting(true);
-    }, 1400);
+    }, 1350);
 
     const unmountTimer = setTimeout(() => {
       setMounted(false);
-    }, 2350);
+    }, 2250);
 
     return () => {
       cancelAnimationFrame(rafId);
@@ -55,21 +64,24 @@ export function Preloader() {
   }, []);
 
   useEffect(() => {
+    if (pathname?.startsWith("/admin")) {
+      setMounted(false);
+      return;
+    }
+
     const cleanup = startAnimation();
-
-    const handleReplay = () => {
-      setPlayId((prev) => prev + 1);
-    };
-
-    window.addEventListener("replay-preloader", handleReplay);
 
     return () => {
       cleanup?.();
-      window.removeEventListener("replay-preloader", handleReplay);
     };
-  }, [playId, startAnimation]);
+  }, [playId, startAnimation, pathname]);
 
   if (!mounted || pathname?.startsWith("/admin")) return null;
+
+  const displayPath =
+    pathname && pathname !== "/"
+      ? `thanzeerj.com${pathname.toLowerCase()}`
+      : "thanzeerj.com";
 
   return (
     <div
@@ -79,7 +91,7 @@ export function Preloader() {
       aria-hidden="true"
     >
       <div className="preloader-meta">
-        <span>Plotting thanzeerj.com</span>
+        <span>Plotting {displayPath}</span>
         <span>rev. 2026</span>
       </div>
 

@@ -13,7 +13,7 @@
   clip-path: inset(0 0 0 0);
   will-change: clip-path;
   user-select: none;
-  animation: preloader-lift 0.85s cubic-bezier(0.76, 0, 0.24, 1) 1.45s forwards;
+  animation: preloader-lift 0.85s cubic-bezier(0.76, 0, 0.24, 1) 1.35s forwards;
 }
 
 @media (max-width: 767px) {
@@ -116,10 +116,4 @@
   color: #edede7;
   min-width: 4ch;
   text-align: right;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .preloader-overlay {
-    display: none !important;
-  }
 }

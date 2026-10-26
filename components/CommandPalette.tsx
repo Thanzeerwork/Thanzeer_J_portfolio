@@ -156,15 +156,6 @@ export function CommandPalette() {
         root.dataset.grid = root.dataset.grid === "on" ? "off" : "on";
       },
     },
-    {
-      id: "replay-preloader",
-      title: "Replay Logo Loading Animation",
-      category: "Preferences",
-      detail: "Re-run the Pier Gorelli monogram plotting preloader",
-      action: () => {
-        window.dispatchEvent(new CustomEvent("replay-preloader"));
-      },
-    },
   ];
 
   return [...baseNav, ...projectItems, ...serviceItems, ...blogItems, ...prefItems];
