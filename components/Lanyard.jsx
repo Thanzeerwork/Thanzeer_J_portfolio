@@ -931,7 +931,7 @@ const Lanyard = ({
       foilUniforms.foilFill.value.set(3, -1, 4).normalize().transformDirection(camera.matrixWorldInverse);
       foilUniforms.foilTop.value.set(0.5, 4.5, 8).normalize().transformDirection(camera.matrixWorldInverse);
       const anchorX = ((ANCHORS[s.anchor] ?? 0.5) - 0.5) * viewWidth;
-      const anchorY = viewHeight / 2 + 0.2;
+      const anchorY = viewHeight / 2;
       const strapFraction = mix(0.11, 0.26, clamp(s.strapLength, 0, 1));
       const cardTop = viewHeight / 2 - viewHeight * strapFraction;
       const hangTop = cardTop + (layout.hangY - layout.height / 2);

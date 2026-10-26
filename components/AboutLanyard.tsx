@@ -59,24 +59,48 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
       style={{
         position: 'relative',
         width: '100%',
-        height: '100%',
-        minHeight: isMobile ? '460px' : '540px',
         display: 'flex',
         flexDirection: 'column',
         ...style,
       }}
     >
+      {/* Structural horizontal connecting line that the lanyard strap hangs from */}
+      <div
+        className="lanyard-hang-line"
+        style={{
+          width: '100%',
+          height: '1px',
+          background: 'var(--line-strong, rgba(0, 0, 0, 0.25))',
+          position: 'relative',
+        }}
+      >
+        {/* Metal clamp fixture mounted on the line */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-2px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: isMobile ? '28px' : '24px',
+            height: '6px',
+            background: 'var(--ink, #111)',
+            borderRadius: '2px',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
+            zIndex: 3,
+          }}
+        />
+      </div>
+
+      {/* Transparent canvas container */}
       <div
         style={{
           position: 'relative',
           width: '100%',
-          flex: 1,
-          minHeight: isMobile ? '420px' : '490px',
-          borderRadius: '16px',
+          height: isMobile ? '440px' : '500px',
+          background: 'transparent',
+          border: 'none',
+          boxShadow: 'none',
           overflow: 'hidden',
-          background: 'radial-gradient(circle at 50% 25%, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0) 80%), var(--bg-raised, #0c0f14)',
-          border: '1px solid var(--line, rgba(255,255,255,0.08))',
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 40px -15px rgba(0,0,0,0.4)',
         }}
       >
         <Lanyard
