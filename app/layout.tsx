@@ -6,6 +6,7 @@ import { ThemeScript } from "@/components/ThemeScript";
 import { GridOverlay } from "@/components/GridOverlay";
 import { CommandPalette } from "@/components/CommandPalette";
 import { MotionController } from "@/components/MotionController";
+import { Preloader } from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: {
@@ -67,6 +68,7 @@ export default function RootLayout({
         />
       </head>
       <body className="frame">
+        <Preloader />
         <a href="#main" className="skip note">
           Skip to content
         </a>

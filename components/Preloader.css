@@ -1,0 +1,125 @@
+/* Pier Gorelli style Full-Screen Preloader */
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #090a0d;
+  color: #edede7;
+  padding: 1.5rem var(--gutter, 1.5rem);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-items: center;
+  pointer-events: all;
+  clip-path: inset(0 0 0 0);
+  will-change: clip-path;
+  user-select: none;
+  animation: preloader-lift 0.85s cubic-bezier(0.76, 0, 0.24, 1) 1.45s forwards;
+}
+
+@media (max-width: 767px) {
+  .preloader-overlay {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.preloader-overlay.is-lifting {
+  pointer-events: none;
+}
+
+@keyframes preloader-lift {
+  0% {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+
+.preloader-meta {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(237, 237, 231, 0.55);
+}
+
+.preloader-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.preloader-mark {
+  font-size: clamp(5.5rem, 16vw, 11rem) !important;
+  width: auto !important;
+  height: 1em !important;
+  display: block !important;
+  overflow: visible !important;
+  color: #ffffff;
+}
+
+.preloader-mark path {
+  fill: none;
+  stroke: #ffffff !important;
+  stroke-width: 4.2px;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: preloader-stroke-plot 1.15s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.preloader-mark .monogram__j {
+  animation-delay: 0.18s;
+}
+
+.preloader-mark .monogram__dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  animation: preloader-dot-pop 0.35s cubic-bezier(0.25, 1, 0.5, 1) 0.85s forwards;
+  fill: #c6f432 !important;
+}
+
+@keyframes preloader-stroke-plot {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes preloader-dot-pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.preloader-count {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: #edede7;
+  min-width: 4ch;
+  text-align: right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader-overlay {
+    display: none !important;
+  }
+}
