@@ -43,7 +43,15 @@ interface AboutLanyardProps {
 }
 
 export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
-  const [finish, setFinish] = useState<'holographic' | 'glossy' | 'metallic'>('holographic');
+  const [finish, setFinish] = useState<'holographic' | 'glossy' | 'metallic'>('metallic');
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div
@@ -52,7 +60,7 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
         position: 'relative',
         width: '100%',
         height: '100%',
-        minHeight: '540px',
+        minHeight: isMobile ? '460px' : '540px',
         display: 'flex',
         flexDirection: 'column',
         ...style,
@@ -63,7 +71,7 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
           position: 'relative',
           width: '100%',
           flex: 1,
-          minHeight: '500px',
+          minHeight: isMobile ? '420px' : '490px',
           borderRadius: '16px',
           overflow: 'hidden',
           background: 'radial-gradient(circle at 50% 25%, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0) 80%), var(--bg-raised, #0c0f14)',
@@ -79,11 +87,11 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
           orientation="portrait"
           finish={finish}
           cornerRadius={0.2}
-          size={0.88}
+          size={isMobile ? 0.98 : 0.88}
           anchor="center"
-          strapLength={0.36}
+          strapLength={isMobile ? 0.25 : 0.32}
           strapColor="#111317"
-          strapWidth={0.72}
+          strapWidth={isMobile ? 0.75 : 0.7}
           metal="silver"
           gravity={1}
           damping={0.55}
@@ -93,7 +101,7 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
           intro={true}
         />
 
-        {/* Top-right finish toggle pill */}
+        {/* Finish toggle pill */}
         <div
           style={{
             position: 'absolute',
@@ -109,7 +117,7 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
             zIndex: 10,
           }}
         >
-          {(['holographic', 'glossy', 'metallic'] as const).map((mode) => (
+          {(['metallic', 'holographic', 'glossy'] as const).map((mode) => (
             <button
               key={mode}
               type="button"
@@ -128,7 +136,7 @@ export function AboutLanyard({ className = '', style }: AboutLanyardProps) {
                 transition: 'all 0.15s ease',
               }}
             >
-              {mode === 'holographic' ? 'Holo' : mode === 'glossy' ? 'Gloss' : 'Metal'}
+              {mode === 'metallic' ? 'Metal' : mode === 'holographic' ? 'Holo' : 'Gloss'}
             </button>
           ))}
         </div>
