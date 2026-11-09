@@ -54,7 +54,7 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { href: "/#work", label: "Work", n: "01" },
+    { href: "/work", label: "Work", n: "01" },
     { href: "/services", label: "Services", n: "02" },
     { href: "/about", label: "About", n: "03" },
     { href: "/blog", label: "Blog", n: "04" },

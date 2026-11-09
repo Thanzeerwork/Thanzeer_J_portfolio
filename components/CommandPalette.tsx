@@ -44,10 +44,10 @@ export function CommandPalette() {
       },
       {
         id: "work",
-        title: "Selected Work",
+        title: "Projects Catalog & Work",
         category: "Navigation",
-        detail: "Confidential case studies & builds",
-        action: () => router.push("/#work"),
+        detail: "Browse all 13 production builds & case studies",
+        action: () => router.push("/work"),
       },
       {
         id: "services",

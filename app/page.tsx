@@ -23,9 +23,19 @@ export default function Home() {
       <section className="section wrap" id="work" data-astro-cid-lcdefpme>
         <header className="section-head" data-astro-cid-lcdefpme>
           <span className="note note--ink" data-astro-cid-lcdefpme>[02] Selected work</span>
-          <span className="note" data-astro-cid-lcdefpme>Featured Case Studies &amp; Builds</span>
+          <span className="note" data-astro-cid-lcdefpme>
+            Featured Case Studies &amp; Builds ·{" "}
+            <Link href="/work" className="link link--inline">
+              View All Catalog →
+            </Link>
+          </span>
         </header>
         <SelectedWork />
+        <div style={{ marginTop: "2.5rem", display: "flex", justifyContent: "center" }}>
+          <Link href="/work" className="btn btn--ghost">
+            Explore All 13 Projects in Catalog <span className="arrow" aria-hidden="true">→</span>
+          </Link>
+        </div>
       </section>
 
       <AgencyTestimonials />

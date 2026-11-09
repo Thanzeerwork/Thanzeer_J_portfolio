@@ -5,41 +5,72 @@
 ## Core Information
 - Name: Thanzeer J
 - Role: Full-Stack Developer, Mobile Application Developer, Software Engineer
-- Education: Bachelor of Technology (B.Tech) in Computer Science and Engineering
+- Education: Bachelor of Technology (B.Tech) in Computer Science and Engineering, Younus College of Engineering and Technology (2022 - 2026)
+- Specialized Training: Entri Elevate – Full Stack Web Development (MERN) (2025 - 2026)
 - Location: Kerala, India (10.85° N, 76.27° E · IST / UTC+5:30)
 - Email: thanzeerwork@gmail.com
 - Phone: +91 98956 54031
 - Portfolio Website: https://thanzeer-j.is-a.dev/
+- Portfolio Projects Catalog: https://thanzeer-j.is-a.dev/work
 - Live Platform: https://ryphtech.in/
 - GitHub: https://github.com/Thanzeerwork
 - LinkedIn: https://www.linkedin.com/in/thanzeer-j/
 
 ## Technical Expertise
-- Frontend: JavaScript (ES6+), TypeScript, React.js, Next.js (App Router), Tailwind CSS, Astro, HTML5, CSS3, GSAP
-- Mobile: React Native, Expo, React Navigation, Cross-Platform Android & iOS Engineering
-- Backend & APIs: Node.js, Express.js, RESTful API Design, Serverless Functions
-- Databases & Cloud: Google Cloud Firestore, Firebase Auth & Storage, Supabase (PostgreSQL), MongoDB
-- Cloud Storage & DevOps: Cloudflare R2 Object Storage, Git, GitHub Actions, Vercel, Netlify
+- Domains: Web Development, Cross-Platform Mobile Application Development, Systems Tooling
+- Languages: JavaScript, TypeScript, C, Java, Python, HTML5, CSS3
+- Frameworks & Libraries: React.js, Next.js 16 (App Router), React Native, Expo, Node.js, Express.js, Tailwind CSS v4, GSAP, Three.js, Lenis, Radix UI / shadcn/ui
+- Databases & Cloud: Google Firebase (Auth, Firestore, Storage), Supabase (PostgreSQL), MongoDB, Cloudflare R2 (S3 SDK), AWS S3
+- AI & Coding Agents: Google Gemini 1.5, Genkit AI, Google Antigravity, Claude Code, Codex
+- Cloud & Deployment: Vercel, Cloudflare, Render, Railway, Git, GitHub Actions
 
 ## Production Projects & Case Studies
-- **RyphTech (2026)**: Technology brand website and digital platform built with React, Vite, and Tailwind CSS.
+
+### Full-Stack Web & Modern Frontends
+- **Thanzeer J (Developer Portfolio & Headless CMS)**: Next.js 16, React 19, TypeScript, Firebase Auth & Firestore, Cloudflare R2, Three.js, GSAP, Lenis, Tailwind CSS.
+  - URL: https://thanzeer-j.is-a.dev/work/thanzeer-portfolio
+  - Key focus: Production-grade agency website with dark/light theming, dynamic project showcases, and a secure internal REST API CMS for content and asset management.
+- **RyphTech (Agency Portal & Headless CMS)**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, Radix UI, shadcn/ui, Recharts, Zod, React Hook Form.
   - URL: https://thanzeer-j.is-a.dev/work/ryphtech
   - Live Demo: https://ryphtech.in/
-  - Key focus: Modern component architecture, brand positioning, 100% responsive layout, Lighthouse 98+.
-- **MealHub (2026)**: Digital canteen prebooking and order management platform built with React Native, React.js, Firebase, and Supabase.
+  - Key focus: Corporate portal and internal CMS with project lifecycle management, image asset uploads, and catalog data updates.
+- **Ila Kochi (Restaurant & Reservation Web App)**: React 19, TypeScript, Vite, Tailwind CSS v4, GSAP + ScrollTrigger, Three.js, Cloudflare R2, AWS S3, Firebase.
+  - URL: https://thanzeer-j.is-a.dev/work/ila-kochi
+  - Key focus: Experiential hospitality web app featuring cinematic vertical culinary reels, scroll-triggered animations, interactive dietary-filtered menus, and direct-to-WhatsApp booking integration.
+- **Lavender Aquafarm (Specialized E-Commerce & Farm Management)**: React 19, Vite, Tailwind CSS, Supabase (Auth & PostgreSQL), Framer Motion, OGL (WebGL 3D), React Router 7.
+  - URL: https://thanzeer-j.is-a.dev/work/lavender-aquafarm
+  - Key focus: E-commerce platform for an ornamental aquaculture farm featuring a custom 3D WebGL species visualizer, dynamic slide-out cart drawer, and a protected live stock management admin panel.
+- **Cardamom Village (Agro-Tourism & Spice Showcase)**: React 19, Vite, Tailwind CSS, TypeScript.
+  - URL: https://thanzeer-j.is-a.dev/work/cardamom-village
+  - Key focus: Modern agricultural brand showcase highlighting plantation-to-doorstep traceability, spice catalog, and buyer contact channels.
+- **GulfWings3000 (Digital Magazine & Publishing Portal)**: React 19, Vite, React Router 7, Supabase (Auth & PostgreSQL), react-pdf, Tailwind CSS.
+  - URL: https://thanzeer-j.is-a.dev/work/gulfwings3000
+  - Key focus: Digital publishing portal featuring an in-browser PDF reader, issue archives, community event directory, and an editorial back-office console.
+
+### Cross-Platform Mobile Applications
+- **FutureSelf (AI-Powered Career & Placement Readiness Ecosystem)**: React Native, Expo (SDK 54), Firebase, Google Gemini 1.5, Genkit AI, Judge0 REST API, Monaco Editor, Victory Native.
+  - URL: https://thanzeer-j.is-a.dev/work/futureself
+  - Key focus: A full-stack mobile platform leveraging LLMs and cloud runtimes to automate career guidance, personalized skill gap diagnostics, and coding assessments for college students and placement recruiters.
+- **StudyVault / YCET Portal (College ERP & Academic Analytics Platform)**: React Native, Expo, React Navigation, Firebase, Supabase, React Native Paper, Victory Native, React Native Skia.
+  - URL: https://thanzeer-j.is-a.dev/work/studyvault
+  - Key focus: Cross-platform academic ERP unifying operations for Students, Faculty, HODs, Placement Officers, and Admins. Handles live attendance marking, CIA mark computation, and placement drive tracking.
+- **RationKart (Digital Public Distribution System with Doorstep Delivery)**: React Native, Expo (SDK 54/57), Expo Router, Firebase, Expo Location, React Native Reanimated.
+  - URL: https://thanzeer-j.is-a.dev/work/rationkart
+  - Key focus: Multi-tenant civic mobile application digitizing the Indian Public Distribution System (PDS) across 4 roles: Customers (Cardholders), Fair Price Shop Merchants, Delivery Agents, and Government Admins.
+- **MealHub (Digital Canteen Prebooking Platform)**: React Native, React.js, Firebase, Supabase, Tailwind CSS.
   - URL: https://thanzeer-j.is-a.dev/work/mealhub
   - Key focus: Real-time food availability, advance queue reduction (70%), synchronized web and mobile ordering.
-- **Repairro (2026)**: Doorstep repair and logistics coordination platform built with React Native, Node.js, Cloud Firestore, and Express.js.
+- **Repairro (Doorstep Repair & Service Logistics)**: React Native, Node.js, Cloud Firestore, Express.js.
   - URL: https://thanzeer-j.is-a.dev/work/repairro
   - Key focus: 6-stage lifecycle coordinating customers, repair shops, inspection quotes, and delivery tracking.
-- **Student Management Portal (2025)**: Unified campus system built with React.js, Node.js, MongoDB, Express, and REST APIs.
+- **Student Management Portal (Unified Campus System)**: React.js, Node.js, MongoDB, Express, REST APIs.
   - URL: https://thanzeer-j.is-a.dev/work/student-portal
   - Key focus: Role-Based Access Control (RBAC), 10 core academic modules, automated CGPA placement eligibility filtering.
 
-## Services Offered
-1. **Web Development**: Fast, accessible, responsive websites and interactive web applications using React, Next.js, and modern CSS. (https://thanzeer-j.is-a.dev/services/web-development)
-2. **Mobile Application Development**: Cross-platform iOS and Android applications with React Native, secure authentication, and cloud data synchronization. (https://thanzeer-j.is-a.dev/services/mobile-development)
-3. **Backend & Database Integration**: Scalable database design, REST APIs, authentication gateways, and real-time data handling with Firebase, Supabase, and MongoDB. (https://thanzeer-j.is-a.dev/services/backend-database)
+### Developer Tools & Systems
+- **Website Reaper (Autonomous Full-Fidelity Web Scraper & Offline Packager)**: Node.js, Express, Puppeteer-Core (Chromium), Cheerio, Wget, PostCSS, Server-Sent Events (SSE), Archiver.
+  - URL: https://thanzeer-j.is-a.dev/work/website-reaper
+  - Key focus: High-speed hybrid website mirroring and runtime generation engine that extracts modern SPAs (Next.js, React, Nuxt) with complete DOM hydration, WebGL/3D assets, CSSOM keyframes, and packages them into self-contained offline bundles.
 
 ## Documentation & Deep-Dive
 - Full documentation and architectural breakdowns: https://thanzeer-j.is-a.dev/llms-full.txt

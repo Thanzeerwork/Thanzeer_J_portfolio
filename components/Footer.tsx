@@ -32,7 +32,7 @@ export function Footer() {
         <div className="footer-col">
           <span className="note note--ink" style={{ display: "block", marginBottom: "0.5rem" }}>Navigate</span>
           <ul>
-            <li><Link href="/#work" className="link">Work</Link></li>
+            <li><Link href="/work" className="link">Work</Link></li>
             <li><Link href="/services" className="link">Services</Link></li>
             <li><Link href="/about" className="link">About</Link></li>
             <li><Link href="/blog" className="link">Blog</Link></li>
@@ -49,18 +49,23 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/work/mealhub" className="link">
-                MealHub <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
+              <Link href="/work/futureself" className="link">
+                FutureSelf AI <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
               </Link>
             </li>
             <li>
-              <Link href="/work/repairro" className="link">
-                Repairro <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
+              <Link href="/work/rationkart" className="link">
+                RationKart <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
               </Link>
             </li>
             <li>
-              <Link href="/work/student-portal" className="link">
-                Student Portal <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
+              <Link href="/work/website-reaper" className="link">
+                Website Reaper <span className="arrow" aria-hidden="true" style={{ fontSize: "0.85em" }}>↗</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/work" className="link" style={{ color: "var(--accent-text)" }}>
+                All 13 Projects →
               </Link>
             </li>
           </ul>
