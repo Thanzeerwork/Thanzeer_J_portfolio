@@ -1067,8 +1067,17 @@ html.js:not([data-preloaded]) .preloader {
 
 /* ===== HERO SECTIONS ===== */
 .hero {
+  position: relative;
+  isolation: isolate;
   padding-top: 6rem;
   padding-bottom: 2rem;
+}
+.hero__top,
+.hero__title,
+.hero__notes,
+.hero__foot {
+  position: relative;
+  z-index: 2;
 }
 .hero__top {
   display: flex;
@@ -1148,7 +1157,7 @@ html.js:not([data-preloaded]) .preloader {
 /* ===== BLUEPRINT OVERLAYS ===== */
 .bp {
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   inset: 0;
 }
@@ -1838,12 +1847,12 @@ svg [pathLength="1"] {
 
 /* ===== HERO GL CANVAS ===== */
 .hero-gl {
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   opacity: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 2s var(--ease-out);
+  transition: opacity 1.5s var(--ease-out);
   position: absolute;
   inset: 0;
 }
