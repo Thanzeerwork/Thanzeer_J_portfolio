@@ -173,8 +173,8 @@ A production-ready agency website built for **RyphTech**, engineered with Next.j
     ],
     featured: true,
     href: "/work/ila-kochi",
-    liveUrl: "https://github.com/Thanzeerwork",
-    githubUrl: "https://github.com/Thanzeerwork",
+    liveUrl: "https://ilakochi-v2.vercel.app/",
+    githubUrl: "https://github.com/Ryphtech/ilakochi_v2",
     accent: "#e05d38",
     imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ila-kochi-live.jpg",
     content: `
@@ -510,8 +510,8 @@ An enterprise college ERP cross-platform mobile application deployed for **Younu
     ],
     featured: true,
     href: "/work/website-reaper",
-    liveUrl: "https://github.com/Thanzeerwork",
-    githubUrl: "https://github.com/Thanzeerwork",
+    liveUrl: "https://website-reaper.vercel.app/",
+    githubUrl: "https://github.com/Thanzeerwork/Website-Reaper",
     accent: "#ef4444",
     imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/website-reaper-live.jpg",
     content: `
