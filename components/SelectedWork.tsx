@@ -1,32 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { PROJECTS, type Project } from "@/data/projects";
-import { fetchProjects } from "@/lib/firebase/firestore";
 
 export function SelectedWork() {
-  const [projectList, setProjectList] = useState<Project[]>(() =>
-    PROJECTS.filter((p) => p.featured)
-  );
-
-  useEffect(() => {
-    fetchProjects().then((res) => {
-      if (res.projects && res.projects.length > 0) {
-        // Merge to guarantee all foundational projects are always present
-        const merged = PROJECTS.map((def) => {
-          const found = res.projects.find((p) => p.id === def.id);
-          return found ? { ...def, ...found } : def;
-        });
-        const extras = res.projects.filter(
-          (p) => !PROJECTS.some((def) => def.id === p.id)
-        );
-        const all = [...merged, ...extras];
-        setProjectList(all.filter((p) => p.featured));
-      }
-    });
-  }, []);
-
+  const projectList: Project[] = PROJECTS.filter((p) => p.featured);
   const totalCount = String(projectList.length).padStart(2, "0");
 
   return (
