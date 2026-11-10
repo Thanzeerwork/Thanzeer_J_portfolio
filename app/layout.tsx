@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ryphtech-live.png",
+        url: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/1794290064433-0c0c42e1-c6b0-4b38-a0a0-87bdb4651945.jpg",
         width: 1200,
         height: 630,
         alt: "Thanzeer J - Full-Stack Developer Portfolio & Case Studies",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     title: "Thanzeer J — Full-Stack Developer & Software Developer",
     description:
       "Explore production case studies, development architecture, and mobile apps built with React, React Native, and Cloud Firestore.",
-    images: ["https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ryphtech-live.png"],
+    images: ["https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/1794290064433-0c0c42e1-c6b0-4b38-a0a0-87bdb4651945.jpg"],
   },
   icons: {
     icon: "/favicon.svg",

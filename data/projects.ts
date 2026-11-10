@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://thanzeer-j.is-a.dev/",
     githubUrl: "https://github.com/Thanzeerwork/Thanzeer_J_portfolio",
     accent: "#2f5bff",
-    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ryphtech-live.png",
+    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/1794290064433-0c0c42e1-c6b0-4b38-a0a0-87bdb4651945.jpg",
     content: `
 ### Architecture Overview
 An enterprise-grade personal portfolio and content management platform built from scratch with **Next.js 16 (App Router)**, **React 19**, and **TypeScript**. Blending high-fidelity interactive physics with a secure headless administration portal.
