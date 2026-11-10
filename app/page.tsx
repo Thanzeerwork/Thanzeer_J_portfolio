@@ -24,9 +24,9 @@ export default function Home() {
         <header className="section-head" data-astro-cid-lcdefpme>
           <span className="note note--ink" data-astro-cid-lcdefpme>[02] Selected work</span>
           <span className="note" data-astro-cid-lcdefpme>
-            Featured Case Studies &amp; Builds ·{" "}
+            Featured Builds ·{" "}
             <Link href="/work" className="link link--inline">
-              View All Catalog →
+              View All 13 in Catalog →
             </Link>
           </span>
         </header>

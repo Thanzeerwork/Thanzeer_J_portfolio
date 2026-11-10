@@ -6,12 +6,14 @@ import { PROJECTS, type Project } from "@/data/projects";
 import { fetchProjects } from "@/lib/firebase/firestore";
 
 export function SelectedWork() {
-  const [projectList, setProjectList] = useState<Project[]>(PROJECTS);
+  const [projectList, setProjectList] = useState<Project[]>(() =>
+    PROJECTS.filter((p) => p.featured)
+  );
 
   useEffect(() => {
     fetchProjects().then((res) => {
       if (res.projects && res.projects.length > 0) {
-        // Merge to guarantee all 4 foundational projects are always present
+        // Merge to guarantee all foundational projects are always present
         const merged = PROJECTS.map((def) => {
           const found = res.projects.find((p) => p.id === def.id);
           return found ? { ...def, ...found } : def;
@@ -19,7 +21,8 @@ export function SelectedWork() {
         const extras = res.projects.filter(
           (p) => !PROJECTS.some((def) => def.id === p.id)
         );
-        setProjectList([...merged, ...extras]);
+        const all = [...merged, ...extras];
+        setProjectList(all.filter((p) => p.featured));
       }
     });
   }, []);
