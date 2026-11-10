@@ -4,8 +4,19 @@ import React from "react";
 import Link from "next/link";
 import { PROJECTS, type Project } from "@/data/projects";
 
+const FEATURED_IDS = [
+  "thanzeer-portfolio",
+  "ryphtech",
+  "ila-kochi",
+  "website-reaper",
+  "mealhub",
+  "repairro",
+];
+
 export function SelectedWork() {
-  const projectList: Project[] = PROJECTS.filter((p) => p.featured);
+  const projectList: Project[] = FEATURED_IDS
+    .map((id) => PROJECTS.find((p) => p.id === id))
+    .filter((p): p is Project => Boolean(p));
   const totalCount = String(projectList.length).padStart(2, "0");
 
   return (

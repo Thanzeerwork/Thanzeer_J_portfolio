@@ -171,12 +171,12 @@ A production-ready agency website built for **RyphTech**, engineered with Next.j
       "Direct-to-WhatsApp Booking & Pre-order Engine",
       "Zero-Layout-Shift Cloud Media Pipelines",
     ],
-    featured: false,
+    featured: true,
     href: "/work/ila-kochi",
     liveUrl: "https://github.com/Thanzeerwork",
     githubUrl: "https://github.com/Thanzeerwork",
     accent: "#e05d38",
-    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/mealhub-live.jpg",
+    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/ila-kochi-live.jpg",
     content: `
 ### Project Summary
 An experiential hospitality platform developed for **Ila Kochi**, celebrating culinary artistry through modern digital storytelling.
@@ -508,12 +508,12 @@ An enterprise college ERP cross-platform mobile application deployed for **Younu
       "Real-Time Scraping Progress Stream via Server-Sent Events",
       "Self-Contained Offline Zip Packaging Engine (Archiver)",
     ],
-    featured: false,
+    featured: true,
     href: "/work/website-reaper",
     liveUrl: "https://github.com/Thanzeerwork",
     githubUrl: "https://github.com/Thanzeerwork",
     accent: "#ef4444",
-    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/mealhub-live.jpg",
+    imageUrl: "https://pub-3332a705bc7448cb8f7d0cbef92c8730.r2.dev/projects/website-reaper-live.jpg",
     content: `
 ### Project Summary
 **Website Reaper** is a high-speed hybrid website mirroring and runtime generation engine engineered with Node.js and Chromium automation.
